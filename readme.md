@@ -105,13 +105,6 @@ Update values as needed in each file.
 
 ## 🐳 Run with Docker
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
-cd PROJECT_ROOT_FOLDER_NAME
-```
-
 ### Basic Auth for Celery Flower
 
 To protect Flower dashboard:
