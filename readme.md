@@ -18,7 +18,6 @@ This project is a full-stack application using **Next.js (client)** and **Django
   - [Verify and Access Services](#verify-and-access-services)
 - [💻 Run Without Docker](#-run-without-docker)
   - [Set Up Local PostgreSQL](#set-up-local-postgresql)
-  - [Next.js Config](#nextjs-config)
   - [Run Django Backend](#run-django-backend)
   - [Run Next.js Frontend](#run-nextjs-frontend)
 - [💡 Additional Notes](#-additional-notes)
@@ -147,66 +146,6 @@ docker-compose logs -f
 
 ## 💻 Run Without Docker
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
-cd PROJECT_ROOT_FOLDER_NAME
-```
-
----
-
-### Create Virtual Environment
-
-#### On Mac/Linux:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-OR
-
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-#### On Windows:
-
-```powershell
-python -m venv venv
-.\venv\Scripts\ctivate
-```
-
----
-
-### Install Dependencies
-
-```bash
-pip install -r api/requirements.txt
-```
-
-```bash
-cd client
-npm install
-cd ..
-```
-
----
-
-### Set Up Environment Files
-
-Copy and rename sample `.env` files:
-
-```bash
-cp secrets/api/.env.sample api/.env
-```
-
-Update values as needed in each file.
-
----
-
 ### Set Up Local PostgreSQL
 
 Using `psql` or `pgAdmin`, create a database and user that matches:
@@ -216,17 +155,6 @@ Using `psql` or `pgAdmin`, create a database and user that matches:
 - DB Password
 - Host: `localhost`
 - Port: `5432`
-
----
-
-### Next.js Config
-
-```bash
-cd client
-cp next.config.sample.js next.config.js
-```
-
-Edit `next.config.js` and fill in environment-specific values.
 
 ---
 
