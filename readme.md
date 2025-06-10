@@ -7,7 +7,7 @@ This project is a full-stack application using **Next.js (client)** and **Django
 ## 📚 Table of Contents
 
 - [🔧 Prerequisites](#-prerequisites)
-- [⚙️ Initial Configuration](#-initial-configuration)
+- [⚙️ Initial Configuration](#%EF%B8%8F-initial-configuration)
   - [Clone the Repository](#clone-the-repository)
   - [Create Virtual Environment](#create-virtual-environment)
   - [Install Dependencies](#install-dependencies)
