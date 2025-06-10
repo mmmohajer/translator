@@ -135,7 +135,6 @@ docker-compose -f docker-compose-dev.yml up --build -d
 
 ```bash
 docker ps
-docker-compose logs -f
 ```
 
 - Frontend: http://localhost
