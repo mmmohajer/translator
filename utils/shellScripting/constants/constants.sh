@@ -2,8 +2,8 @@ BOLD_TXT=$(tput bold)
 NORMAL_TXT=$(tput sgr0)
 OPTIONS=(0 1 2 3 4 5 6 7 Q)
 
-PROD_SERVER_ALIAS=techtipsbymoh
+PROD_SERVER_ALIAS=PROD_SERVER_ALIAS
 
-NGINX_REPO="iswad/techtipsbymoh-nginx"
-CLIENT_REPO="iswad/techtipsbymoh-client"
-API_REPO="iswad/techtipsbymoh-api"
+NGINX_REPO="NGINX_REPO_ON_DOCKER_HUB"
+CLIENT_REPO="CLIENT_REPO_ON_DOCKER_HUB"
+API_REPO="API_REPO_ON_DOCKER_HUB"
