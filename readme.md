@@ -1,32 +1,54 @@
 # 🚀 Full-Stack App Setup Guide
 
-This project is a full-stack application using **Next.js (client)** and **Django (backend)** with PostgreSQL, PgBouncer, and Docker. Follow the instructions below to set it up and run it in development mode.
+This project is a full-stack application using **Next.js (client)** and **Django (backend)** with **PostgreSQL**, **PgBouncer**, **Redis**, **Celery**, and **Docker**. You can run it with or **without Docker** depending on your setup.
 
 ---
 
-## 🧱 Prerequisites
+## 📚 Table of Contents
 
-Make sure the following tools are installed:
+- [🔧 Prerequisites](#-prerequisites)
+- [🐳 Run with Docker](#-run-with-docker)
+  - [Clone the Repository](#clone-the-repository)
+  - [Create Virtual Environment](#create-virtual-environment)
+  - [Install Dependencies](#install-dependencies)
+  - [Set Up Environment Files](#set-up-environment-files)
+  - [Next.js Config](#nextjs-config)
+  - [Basic Auth for Flower](#basic-auth-for-celery-flower)
+  - [Run with Docker Compose](#run-with-docker-compose)
+  - [Verify and Access Services](#verify-and-access-services)
+- [💻 Run Without Docker (Local)](#-run-without-docker-local)
+  - [Set Up Local Environment](#set-up-local-environment)
+  - [Set Up Local PostgreSQL](#set-up-local-postgresql)
+  - [Run Django Backend](#run-django-backend)
+  - [Run Next.js Frontend](#run-nextjs-frontend)
+- [💡 Additional Notes](#-additional-notes)
 
-- [Docker & Docker Compose](https://www.docker.com/)
+---
+
+## 🔧 Prerequisites
+
+Ensure the following tools are installed on your system:
+
+- [Docker & Docker Compose](https://www.docker.com/) (If you are willing to run the app with Docker)
 - [Node.js (v16+ recommended)](https://nodejs.org/)
-- Python 3.10 or newer (Use [`pyenv`](https://github.com/pyenv/pyenv) on Mac if needed)
+- Python 3.10 or newer ([pyenv](https://github.com/pyenv/pyenv) recommended for Mac)
 
 ---
 
-## 📁 1. Clone the repository
+## 🐳 Run with Docker
+
+### Clone the Repository
 
 ```bash
 git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
-
 cd PROJECT_ROOT_FOLDER_NAME
 ```
 
 ---
 
-## 🐍 2. Create and activate Python virtual environment
+### Create Virtual Environment
 
-### On **Mac/Linux**:
+#### On Mac/Linux:
 
 ```bash
 python3 -m venv venv
@@ -40,24 +62,20 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-### On **Windows**:
+#### On Windows:
 
 ```powershell
 python -m venv venv
-.\venv\Scripts\activate
+.\venv\Scripts\ctivate
 ```
 
 ---
 
-## 🧪 3. Install Python dependencies
+### Install Dependencies
 
 ```bash
 pip install -r api/requirements.txt
 ```
-
----
-
-## 🧪 4. Install Node dependencies
 
 ```bash
 cd client
@@ -67,166 +85,204 @@ cd ..
 
 ---
 
-## 🔐 5. Set up `.env` files
+### Set Up Environment Files
 
-You need to copy the `.env.sample` files and rename them to `.env` in the following subfolders:
-
-### 🔸 For the Django backend:
+Copy and rename sample `.env` files:
 
 ```bash
 cp secrets/api/.env.sample secrets/api/.env
-```
-
-### 🔸 For the PSQL DB:
-
-```bash
 cp secrets/db/.env.sample secrets/db/.env
-```
-
-### 🔸 For PgBouncer:
-
-```bash
 cp secrets/pgbouncer/.env.sample secrets/pgbouncer/.env
+cp redis/redis.conf.sample redis/redis.conf
 ```
 
-Update the variables in each file as needed.
+Update values as needed in each file.
+
+> 🔒 **Important:**  
+> In `redis/redis.conf`, the `requirepass` value **must exactly match** the `REDIS_USER_PASS` variable defined in `secrets/api/.env`.
+>
+> This ensures that the Django application can authenticate with the Redis instance successfully.
 
 ---
 
-## ⚙️ 6. Set up Next.js config
-
-Navigate to the `client` folder:
+### Next.js Config
 
 ```bash
 cd client
 cp next.config.sample.js next.config.js
 ```
 
-Edit `next.config.js` and update environment-specific values accordingly.
+Edit `next.config.js` and fill in environment-specific values.
 
 ---
 
-## 🐳 7. Run the app with Docker Compose
+### Basic Auth for Celery Flower
 
-From the **root directory**, run:
+To protect Flower dashboard:
+
+```bash
+cd nginx
+htpasswd -c .htpasswd your_username
+```
+
+---
+
+### Run with Docker Compose
 
 ```bash
 docker-compose -f docker-compose-dev.yml up --build -d
 ```
 
-This will:
-
-- Build and start the Django backend
-- Run the Next.js development server
-- Set up PostgreSQL with PgBouncer
-- Launch Redis, Celery, and other dependencies
-
 ---
 
----
-
-### 🔐 8. Set up Basic Auth for Celery Flower (optional)
-
-To protect the Celery Flower dashboard with a username and password, Nginx uses basic authentication via `.htpasswd`.
-
-Follow these steps:
-
-#### 1. Navigate to the `nginx` folder:
-
-```bash
-cd nginx
-```
-
-#### 2. Create a `.htpasswd` file using the `htpasswd` command:
-
-```bash
-htpasswd -c .htpasswd your_username
-```
-
-> 🔸 Replace `your_username` with the desired username.  
-> 🔸 You’ll be prompted to enter and confirm a password.  
-> 🔸 The `-c` flag creates the file. Omit it if adding more users later.
-
-#### 3. Ensure the `.htpasswd` file is mounted in `docker-compose.yml`:
-
-```yaml
-volumes:
-  - ./nginx/.htpasswd:/etc/nginx/.htpasswd
-```
-
-Now when you visit `http://localhost/flower/` (or your custom domain `/flower`), it will prompt for your credentials.
-
----
-
-## 🧪 9. Verify Services
-
-You can check if everything is working using:
+### Verify and Access Services
 
 ```bash
 docker ps
-```
-
-Check logs:
-
-```bash
 docker-compose logs -f
 ```
 
----
-
-## ✅ 10. Access the App
-
-Once everything is up:
-
-- **Frontend (Next.js):** http://localhost:3000
-- **Backend API (Django):** http://localhost:8000/api
-- **PgBouncer:** localhost:6432 (used internally by Django)
-- **Celery Flower (optional):** http://localhost:5555/flower/ (if enabled and protected)
+- Frontend: http://localhost
+- Backend API: http://localhost/api
+- Celery Flower (optional): http://localhost/flower/
 
 ---
 
-## 🛑 Stopping the App
+## 💻 Run Without Docker
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
+cd PROJECT_ROOT_FOLDER_NAME
+```
+
+---
+
+### Create Virtual Environment
+
+#### On Mac/Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+OR
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+#### On Windows:
+
+```powershell
+python -m venv venv
+.\venv\Scripts\ctivate
+```
+
+---
+
+### Install Dependencies
+
+```bash
+pip install -r api/requirements.txt
+```
+
+```bash
+cd client
+npm install
+cd ..
+```
+
+---
+
+### Set Up Environment Files
+
+Copy and rename sample `.env` files:
+
+```bash
+cp secrets/api/.env.sample api/.env
+```
+
+Update values as needed in each file.
+
+---
+
+### Set Up Local PostgreSQL
+
+Using `psql` or `pgAdmin`, create a database and user that matches:
+
+- DB Name
+- DB User
+- DB Password
+- Host: `localhost`
+- Port: `5432`
+
+---
+
+### Next.js Config
+
+```bash
+cd client
+cp next.config.sample.js next.config.js
+```
+
+Edit `next.config.js` and fill in environment-specific values.
+
+---
+
+### Run Django Backend
+
+```bash
+cd api
+python manage.py runserver
+```
+
+Visit: http://localhost:8000
+
+---
+
+### Run Next.js Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+Visit: http://localhost:3000
+
+---
+
+## 💡 Additional Notes
+
+### Stopping the App (Docker)
 
 ```bash
 docker-compose -f docker-compose-dev.yml down
 ```
 
----
-
-## 🤝 Contributing
-
-If you're working in a team:
-
-- Make sure to `git pull` regularly
-- Keep your `.env` values out of version control
-- Use descriptive commits
-
----
-
-## 💡 Troubleshooting
-
-- If Docker doesn't apply changes, try:
-  ```bash
-  docker-compose -f docker-compose-dev.yml down
-  docker-compose -f docker-compose-dev.yml up --build -d
-  ```
-- If `python` isn't recognized, use `python3`
-- Use `source venv/bin/activate` before running Django CLI commands
-
----
-
-## 🧼 Cleanup (optional)
-
-To remove all containers and volumes:
+### Clean Up Docker Volumes
 
 ```bash
 docker-compose -f docker-compose-dev.yml down -v
 ```
 
+### Troubleshooting
+
+- Docker changes not applying? Try:
+
+```bash
+docker-compose down
+docker-compose up --build -d
+```
+
+- Use `python3` if `python` is not found.
+- Always activate virtualenv before running backend commands.
+
 ---
 
 ## 📬 Questions?
 
-If you run into issues, feel free to reach out via the project's issue tracker or Slack channel (if applicable).
-
----
+Open an issue or reach out to the project maintainer.
