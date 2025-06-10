@@ -1,0 +1,18 @@
+export const ICON_TYPES = [
+  "angle-up",
+  "calendar-days",
+  "check-mark",
+  "circle-user",
+  "close",
+  "eye",
+  "eye-slash",
+  "github",
+  "instagram",
+  "left",
+  "linkedin",
+  "play-circle",
+  "right",
+  "search",
+  "telegram",
+  "youtube",
+];

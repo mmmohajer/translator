@@ -1,0 +1,106 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import cx from "classnames";
+
+import Div from "@/baseComponents/Div/Div";
+import Icon from "@/baseComponents/Icon/Icon";
+import ColorToggler from "@/baseComponents/ColorToggler";
+
+import DisplayColors from "./subs/DisplayColors";
+import DisplayButton from "./subs/DisplayButton";
+import DisplayIcons from "./subs/DisplayIcons";
+import DisplayAnchor from "./subs/DisplayAnchor";
+import DisplayCards from "./subs/DisplayCards";
+import DisplayModal from "./subs/DisplayModal";
+import DisplayCarousel from "./subs/DisplayCarousel";
+import DisplayAlert from "./subs/DisplayAlert";
+import DisplayRowColumn from "./subs/DisplayRowColumn";
+
+import { DESIGN_ITEMS } from "./constants";
+
+const DevDesign = () => {
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+
+  const [showMenu, setShowMenu] = useState(true);
+  const [chosenItem, setChosenItem] = useState("");
+  return (
+    <>
+      <Div
+        className={cx(
+          "min-height-vh-full",
+          isDarkMode ? "bg-theme-two" : "bg-theme-three"
+        )}
+      >
+        {showMenu ? (
+          <Div className="width-px-200 height-vh-full pos-fix pos-fix--lt of-y-auto bg-theme-one">
+            {DESIGN_ITEMS?.map((item, idx) => (
+              <Div
+                key={idx}
+                className={cx(
+                  "p-y-8 p-x-16 text-center m-b-8 text-black mouse-hand",
+                  chosenItem === item?.identifier
+                    ? "bg-theme-two"
+                    : "bg-theme-three"
+                )}
+                onClick={() => {
+                  setShowMenu(false);
+                  setChosenItem(item?.identifier);
+                }}
+              >
+                {item?.title}
+              </Div>
+            ))}
+          </Div>
+        ) : (
+          <Div
+            type="flex"
+            direction="vertical"
+            hAlign="center"
+            className={cx("width-per-100")}
+          >
+            <Div
+              type="flex"
+              hAlign="center"
+              vAlign="center"
+              className="pos-abs bg-theme-seven br-rad-per-50 width-px-30 height-px-30 mouse-hand"
+              style={{ top: "8px", right: "8px" }}
+              onClick={() => {
+                setChosenItem("");
+                setShowMenu(true);
+              }}
+            >
+              <Icon type="close" scale={1.5} color="white" />
+            </Div>
+            <Div
+              type="flex"
+              hAlign="center"
+              className={cx(
+                "width-per-100 flex--wrap",
+                isDarkMode ? "bg-theme-two" : "bg-theme-three"
+              )}
+            >
+              {chosenItem === "colors" ? <DisplayColors /> : ""}
+              {chosenItem === "buttons" ? <DisplayButton /> : ""}
+              {chosenItem === "icons" ? <DisplayIcons /> : ""}
+              {chosenItem === "anchors" ? <DisplayAnchor /> : ""}
+              {chosenItem === "cards" ? <DisplayCards /> : ""}
+              {chosenItem === "modals" ? <DisplayModal /> : ""}
+              {chosenItem === "carousel" ? <DisplayCarousel /> : ""}
+              {chosenItem === "alert" ? <DisplayAlert /> : ""}
+              {chosenItem === "row-column" ? <DisplayRowColumn /> : ""}
+            </Div>
+          </Div>
+        )}
+
+        <Div
+          className="pos-fix z-100"
+          style={{ bottom: "10px", right: "10px" }}
+        >
+          <ColorToggler />
+        </Div>
+      </Div>
+    </>
+  );
+};
+
+export default DevDesign;
