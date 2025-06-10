@@ -36,6 +36,13 @@ Ensure the following tools are installed on your system:
 
 ## ⚙️ Initial Configuration
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
+cd PROJECT_ROOT_FOLDER_NAME
+```
+
 ### Create Virtual Environment
 
 #### On Mac/Linux:
