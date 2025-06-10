@@ -10,7 +10,7 @@ module.exports = {
 
   publicRuntimeConfig: {
     PRODUCTION: false,
-    IS_STAGING_OR_DEVELOPMENT: false,
+    IS_STAGING_OR_DEVELOPMENT: true,
   },
 
   env: {
