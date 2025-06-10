@@ -7,20 +7,16 @@ This project is a full-stack application using **Next.js (client)** and **Django
 ## 📚 Table of Contents
 
 - [🔧 Prerequisites](#-prerequisites)
-- [🐳 Run with Docker](#-run-with-docker)
+- [⚙️ Initial Configuration](#-initial-configuration)
   - [Clone the Repository](#clone-the-repository)
   - [Create Virtual Environment](#create-virtual-environment)
   - [Install Dependencies](#install-dependencies)
   - [Set Up Environment Files](#set-up-environment-files)
-  - [Next.js Config](#nextjs-config)
+- [🐳 Run with Docker](#-run-with-docker)
   - [Basic Auth for Flower](#basic-auth-for-celery-flower)
   - [Run with Docker Compose](#run-with-docker-compose)
   - [Verify and Access Services](#verify-and-access-services)
 - [💻 Run Without Docker](#-run-without-docker)
-  - [Clone the Repository](#clone-the-repository)
-  - [Create Virtual Environment](#create-virtual-environment)
-  - [Install Dependencies](#install-dependencies)
-  - [Set Up Local Environment](#set-up-local-environment)
   - [Set Up Local PostgreSQL](#set-up-local-postgresql)
   - [Next.js Config](#nextjs-config)
   - [Run Django Backend](#run-django-backend)
@@ -39,16 +35,7 @@ Ensure the following tools are installed on your system:
 
 ---
 
-## 🐳 Run with Docker
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
-cd PROJECT_ROOT_FOLDER_NAME
-```
-
----
+## ⚙️ Initial Configuration
 
 ### Create Virtual Environment
 
@@ -93,32 +80,38 @@ cd ..
 
 Copy and rename sample `.env` files:
 
+**If using Docker:**
+
 ```bash
 cp secrets/api/.env.sample secrets/api/.env
 cp secrets/db/.env.sample secrets/db/.env
 cp secrets/pgbouncer/.env.sample secrets/pgbouncer/.env
 cp redis/redis.conf.sample redis/redis.conf
+cp client/next.config.sample.js client/next.config.js
+```
+
+**If not using Docker:**
+
+```bash
+cp secrets/api/.env.sample api/.env
+cp client/next.config.sample.js client/next.config.js
 ```
 
 Update values as needed in each file.
 
 > 🔒 **Important:**  
-> In `redis/redis.conf`, the `requirepass` value **must exactly match** the `REDIS_USER_PASS` variable defined in `secrets/api/.env`.
+> If using Docker, in `redis/redis.conf`, the `requirepass` value **must exactly match** the `REDIS_USER_PASS` variable defined in `secrets/api/.env`.
 >
 > This ensures that the Django application can authenticate with the Redis instance successfully.
 
----
+## 🐳 Run with Docker
 
-### Next.js Config
+### Clone the Repository
 
 ```bash
-cd client
-cp next.config.sample.js next.config.js
+git clone https://github.com/mmmohajer/baserepo.git PROJECT_ROOT_FOLDER_NAME
+cd PROJECT_ROOT_FOLDER_NAME
 ```
-
-Edit `next.config.js` and fill in environment-specific values.
-
----
 
 ### Basic Auth for Celery Flower
 
