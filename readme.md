@@ -1,3 +1,3 @@
 ## 📂 Initial Setup
 
-See detailed instructions here: [Initial Setup Guide](./doc/initial_setup/readme.md)
+See detailed instructions here: [Initial Setup Guide](./docs/initial_setup/readme.md)
