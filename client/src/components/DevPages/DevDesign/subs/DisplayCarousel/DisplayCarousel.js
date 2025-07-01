@@ -4,7 +4,7 @@ import Carousel from "@/baseComponents/Carousel";
 const DisplayCarousel = () => {
   return (
     <>
-      <Carousel numberOfItems={9} itemWidth={500} gapBetweenItems={20}>
+      <Carousel type={1} numberOfItems={9} itemWidth={500} gapBetweenItems={20}>
         <Div className="width-px-500 height-px-300 bg-green m-r-20">
           Hello 1
         </Div>
