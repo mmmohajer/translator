@@ -28,7 +28,7 @@ EOF
 bash -c "$script" 
 }
 
-deployToProd() {
+deployToProdWithSwarm() {
   local nginxBump=$(prompt_for_version_bump "nginx")
   local clientBump=$(prompt_for_version_bump "client")
   local apiBump=$(prompt_for_version_bump "API")
