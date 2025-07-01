@@ -10,16 +10,12 @@ import { COLORS } from "@/constants/vars";
 
 const Select = ({ options, val, setVal, placeHolder, label }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
   return (
     <>
       <Label label={label} />
       <Div
         className={cx(
-          "p-all-temp-1 f-s-px-14 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100",
-          isDarkMode
-            ? "bg-theme-five text-white br-theme-three"
-            : "bg-white text-theme-five br-black"
+          "p-all-temp-1 f-s-px-14 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100 bg-white text-theme-five br-black"
         )}
       >
         <Div
@@ -43,10 +39,7 @@ const Select = ({ options, val, setVal, placeHolder, label }) => {
               showOptions ? "global-rotate-180" : ""
             )}
           >
-            <Icon
-              type="angle-up"
-              color={isDarkMode ? COLORS["theme-four"] : COLORS["theme-two"]}
-            />
+            <Icon type="angle-up" color={COLORS["theme-two"]} />
           </Div>
         </Div>
 

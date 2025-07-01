@@ -5,10 +5,8 @@ import Script from "next/script";
 import { Open_Sans } from "next/font/google";
 
 import { store } from "@/root/src/store";
-import { IS_STAGING_OR_DEVELOPMENT } from "config";
+import { IS_STAGING_OR_DEVELOPMENT, GA_TRACKING_ID } from "config";
 import "../assets/styles/main.scss";
-
-const GA_TRACKING_ID = "G-2PDQN46Z9S";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -41,7 +39,7 @@ const App = ({ Component, pageProps }) => {
       {/* -------------------------------- */}
       {/* Google Analytics Integration */}
       {/* -------------------------------- */}
-      {!IS_STAGING_OR_DEVELOPMENT ? (
+      {!IS_STAGING_OR_DEVELOPMENT && GA_TRACKING_ID ? (
         <>
           <Script
             strategy="afterInteractive"

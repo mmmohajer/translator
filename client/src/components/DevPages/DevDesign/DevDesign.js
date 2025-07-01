@@ -4,7 +4,6 @@ import cx from "classnames";
 
 import Div from "@/baseComponents/Div/Div";
 import Icon from "@/baseComponents/Icon/Icon";
-import ColorToggler from "@/baseComponents/ColorToggler";
 
 import DisplayColors from "./subs/DisplayColors";
 import DisplayButton from "./subs/DisplayButton";
@@ -19,18 +18,11 @@ import DisplayRowColumn from "./subs/DisplayRowColumn";
 import { DESIGN_ITEMS } from "./constants";
 
 const DevDesign = () => {
-  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
-
   const [showMenu, setShowMenu] = useState(true);
   const [chosenItem, setChosenItem] = useState("");
   return (
     <>
-      <Div
-        className={cx(
-          "min-height-vh-full",
-          isDarkMode ? "bg-theme-two" : "bg-theme-three"
-        )}
-      >
+      <Div className={cx("min-height-vh-full bg-theme-three")}>
         {showMenu ? (
           <Div className="width-px-200 height-vh-full pos-fix pos-fix--lt of-y-auto bg-theme-one">
             {DESIGN_ITEMS?.map((item, idx) => (
@@ -74,10 +66,7 @@ const DevDesign = () => {
             <Div
               type="flex"
               hAlign="center"
-              className={cx(
-                "width-per-100 flex--wrap",
-                isDarkMode ? "bg-theme-two" : "bg-theme-three"
-              )}
+              className={cx("width-per-100 flex--wrap bg-blue")}
             >
               {chosenItem === "colors" ? <DisplayColors /> : ""}
               {chosenItem === "buttons" ? <DisplayButton /> : ""}
@@ -95,9 +84,7 @@ const DevDesign = () => {
         <Div
           className="pos-fix z-100"
           style={{ bottom: "10px", right: "10px" }}
-        >
-          <ColorToggler />
-        </Div>
+        ></Div>
       </Div>
     </>
   );

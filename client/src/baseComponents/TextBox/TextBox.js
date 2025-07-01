@@ -16,8 +16,6 @@ const TextBox = ({
   isNotEditable = false,
   ...props
 }) => {
-  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
-
   const [curType, setCurType] = useState("");
 
   useEffect(() => {
@@ -43,10 +41,7 @@ const TextBox = ({
           }}
           placeholder={placeHolder}
           className={cx(
-            "p-all-temp-3 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100",
-            isDarkMode && !forceLightMode
-              ? "bg-theme-five text-white"
-              : "bg-white text-theme-five"
+            "p-all-temp-3 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100 bg-white text-theme-five"
           )}
           style={{ outline: "none" }}
         />
