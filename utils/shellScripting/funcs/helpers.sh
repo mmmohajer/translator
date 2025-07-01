@@ -70,9 +70,10 @@ cat << EOF
 2. Create a new react page.
 3. Create a new django app.
 4. Deploy in local server
-5. Deploy to prod server
-6. Make a backup from the local DB
-7. Restore local DB from a file
+5. Deploy to prod server With Swarm
+6. Deploy to prod server With Compose
+7. Make a backup from the local DB
+8. Restore local DB from a file
 $(echo -en "${I_CYAN}")0. Show MenuBar
 $(echo -en "${I_RED}")Q. Exit
 EOF

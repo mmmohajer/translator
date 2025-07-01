@@ -32,9 +32,10 @@ run() {
             [ $selected == 2 ] && createReactPage
             [ $selected == 3 ] && addDjangoApp
             [ $selected == 4 ] && deployInLocal
-            [ $selected == 5 ] && deployToProd
-            [ $selected == 6 ] && makeBackupOfDb
-            [ $selected == 7 ] && restoreDb
+            [ $selected == 5 ] && deployToProdWithSwarm
+            [ $selected == 6 ] && deployToProdWithCompose
+            [ $selected == 7 ] && makeBackupOfDb
+            [ $selected == 8 ] && restoreDb
         else
             run
         fi
