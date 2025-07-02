@@ -15,4 +15,6 @@ export const ICON_TYPES = [
   "search",
   "telegram",
   "youtube",
+  "upload",
+  "circle-play",
 ];

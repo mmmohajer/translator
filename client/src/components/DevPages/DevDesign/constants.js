@@ -8,4 +8,5 @@ export const DESIGN_ITEMS = [
   { identifier: "carousel", title: "Carousel" },
   { identifier: "alert", title: "Alert" },
   { identifier: "row-column", title: "Row - Column" },
+  { identifier: "form", title: "Form" },
 ];

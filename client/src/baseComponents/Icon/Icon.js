@@ -11,6 +11,8 @@ import {
   faCheck,
   faEye,
   faEyeSlash,
+  faUpload,
+  faCirclePlay,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareInstagram,
@@ -169,6 +171,24 @@ const Icon = ({
       {type === "eye-slash" ? (
         <FontAwesomeIcon
           icon={faEyeSlash}
+          style={{ color, width, height, transform: `scale(${scale})` }}
+        />
+      ) : (
+        ""
+      )}
+
+      {type === "upload" ? (
+        <FontAwesomeIcon
+          icon={faUpload}
+          style={{ color, width, height, transform: `scale(${scale})` }}
+        />
+      ) : (
+        ""
+      )}
+
+      {type === "circle-play" ? (
+        <FontAwesomeIcon
+          icon={faCirclePlay}
           style={{ color, width, height, transform: `scale(${scale})` }}
         />
       ) : (
