@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 
-import Div from "@/baseComponents/Div";
-import Button from "@/baseComponents/Button";
+import Div from "@/baseComponents/reusableComps/Div";
+import Button from "@/baseComponents/reusableComps/Button";
 
 import { addNewAlertItem } from "@/utils/alert";
 

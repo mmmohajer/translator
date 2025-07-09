@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import Div from "@/baseComponents/Div";
-import MediaPicker from "@/baseComponents/MediaPicker";
-import DragDropFileUploader from "@/baseComponents/DragDropFileUploader";
-import DatePicker from "@/baseComponents/DatePicker";
+import Div from "@/baseComponents/reusableComps/Div";
+import MediaPicker from "@/baseComponents/formComponents/MediaPicker";
+import DragDropFileUploader from "@/baseComponents/formComponents/DragDropFileUploader";
+import DatePicker from "@/baseComponents/formComponents/DatePicker";
 
 const DisplayForm = () => {
   const [profilePhoto, setProfilePhoto] = useState(null);

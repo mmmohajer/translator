@@ -1,3 +1,10 @@
+import os
+
+WITH_DOCKER = bool(int(os.environ.get("WITH_DOCKER", 0)))
+
+if not WITH_DOCKER:
+    from dotenv import load_dotenv
+    load_dotenv()
 
 from config.settings.constants import *
 from config.settings.db import *
@@ -9,3 +16,8 @@ from config.settings.celery import *
 from config.settings.cache import *
 from config.settings.email import *
 from config.settings.rest_framework import *
+
+if not WITH_DOCKER:
+    MIDDLEWARE.append('corsheaders.middleware.CorsMiddleware')
+    CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
+    INSTALLED_APPS.append('corsheaders')

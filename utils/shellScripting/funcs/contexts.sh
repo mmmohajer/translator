@@ -2,7 +2,7 @@ getJsContext() {
     local compName=$1
     compName="$(tr '[:lower:]' '[:upper:]' <<< ${compName:0:1})${compName:1}"
 
-    echo """import Div from \"@/baseComponents/Div\";
+    echo """import Div from \"@/baseComponents/reusableComps/Div\";
 
 const $compName = () => {
   return (

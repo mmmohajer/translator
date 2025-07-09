@@ -2,12 +2,12 @@ import cx from "classnames";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Div from "@/baseComponents/Div/Div";
-import Modal from "@/baseComponents/Modal";
-import Loading from "@/baseComponents/Loading";
-import Alert from "@/baseComponents/Alert";
-import SideBarDashboard from "@/baseComponents/SideBarDashboard";
-import FooterNavigation from "@/baseComponents/FooterNavigation";
+import Div from "@/baseComponents/reusableComps/Div/Div";
+import Modal from "@/baseComponents/pageParts/Modal";
+import Loading from "@/baseComponents/pageParts/Loading";
+import Alert from "@/baseComponents/pageParts/Alert";
+import SideBarDashboard from "@/baseComponents/pageParts/SideBarDashboard";
+import FooterNavigation from "@/baseComponents/pageParts/FooterNavigation";
 import BaseAppWrapper from "@/components/wrappers/BaseAppWrapper";
 
 import useDivWidth from "@/hooks/useDivWidth";

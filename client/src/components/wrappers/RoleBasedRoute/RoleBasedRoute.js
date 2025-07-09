@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import Div from "@/baseComponents/Div";
+import Div from "@/baseComponents/reusableComps/Div";
 
 const RoleBasedRoute = ({ authorizedRoles, children }) => {
   const profile = useSelector((state) => state.profile);

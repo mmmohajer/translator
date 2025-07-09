@@ -2,12 +2,12 @@ import cx from "classnames";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Div from "@/baseComponents/Div/Div";
-import Header from "@/baseComponents/Header";
-import Modal from "@/baseComponents/Modal";
-import Alert from "@/baseComponents/Alert";
-import Loading from "@/baseComponents/Loading";
-import Footer from "@/baseComponents/Footer";
+import Div from "@/baseComponents/reusableComps/Div/Div";
+import Header from "@/baseComponents/pageParts/Header";
+import Modal from "@/baseComponents/pageParts/Modal";
+import Alert from "@/baseComponents/pageParts/Alert";
+import Loading from "@/baseComponents/pageParts/Loading";
+import Footer from "@/baseComponents/pageParts/Footer";
 
 import useDivWidth from "@/hooks/useDivWidth";
 import { hideMobNav } from "@/reducer/subs/isMobNavVisible";

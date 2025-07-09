@@ -1,6 +1,6 @@
-import Div from "@/baseComponents/Div";
-import Row from "@/baseComponents/Row";
-import Column from "@/baseComponents/Column";
+import Div from "@/baseComponents/reusableComps/Div";
+import Row from "@/baseComponents/reusableComps/Row";
+import Column from "@/baseComponents/reusableComps/Column";
 
 const DisplayRowColumn = () => {
   return (

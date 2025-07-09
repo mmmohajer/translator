@@ -1,4 +1,4 @@
-import Div from "@/baseComponents/Div";
+import Div from "@/baseComponents/reusableComps/Div";
 
 import Blog from "./subs/Blog";
 import Tip from "./subs/Tip";

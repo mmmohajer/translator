@@ -1,5 +1,5 @@
-import Div from "@/baseComponents/Div";
-import Anchor from "@/baseComponents/Anchor";
+import Div from "@/baseComponents/reusableComps/Div";
+import Anchor from "@/baseComponents/reusableComps/Anchor";
 
 const DisplayAnchor = () => {
   return (
