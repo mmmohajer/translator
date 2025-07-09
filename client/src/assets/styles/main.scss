@@ -16,7 +16,6 @@
 @use "general/modules/_width";
 
 // Branding Classes
-@use "branding/modules/_blog";
 @use "branding/modules/_borders" as branding_borders;
 @use "branding/modules/_colors" as branding_colors;
 @use "branding/modules/_display" as branding_display;
@@ -25,7 +24,6 @@
 @use "branding/modules/_row";
 @use "branding/modules/_scroll";
 @use "branding/modules/spacings";
-@use "branding/modules/_table";
 @use "branding/modules/texts";
 @use "branding/modules/_truncate";
 @use "branding/base/_global";
