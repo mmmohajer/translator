@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CLIENT_CONTAINER_ID=$(docker ps --filter "name=app_client" -q | head -n 1)
+CLIENT_CONTAINER_ID=$(docker ps --filter "name=client" -q | head -n 1)
 echo "Selected Client Container ID: $CLIENT_CONTAINER_ID"
 
 if [ ! -z "$CLIENT_CONTAINER_ID" ]; then

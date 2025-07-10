@@ -3,7 +3,7 @@
 echo "Reloading Nginx replicas..."
 
 # Loop through all running app_nginx replicas and reload Nginx
-for container in $(docker ps --filter "name=app_nginx" --format "{{.ID}}"); do
+for container in $(docker ps --filter "name=nginx" --format "{{.ID}}"); do
     echo "Reloading Nginx in container $container..."
     docker exec $container nginx -s reload
     if [ $? -eq 0 ]; then

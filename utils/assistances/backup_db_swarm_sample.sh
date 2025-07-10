@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the container ID for the DB container
-DB_CONTAINER_ID=$(docker ps --filter "name=app_db" -q)
+DB_CONTAINER_ID=$(docker ps --filter "name=db" -q)
 
 # Check if the DB container ID is not empty
 if [ ! -z "$DB_CONTAINER_ID" ]; then
