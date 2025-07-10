@@ -1,5 +1,5 @@
-import Div from "@/baseComponents/reusableComps/Div";
-import Carousel from "@/baseComponents/reusableComps/Carousel";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Carousel from "@/baseComponents/reusableComponents/Carousel";
 
 const DisplayCarousel = () => {
   return (

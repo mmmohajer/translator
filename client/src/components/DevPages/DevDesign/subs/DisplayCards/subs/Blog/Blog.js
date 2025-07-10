@@ -1,6 +1,6 @@
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 
-import Card from "@/baseComponents/reusableComps/Card";
+import Card from "@/baseComponents/reusableComponents/Card";
 
 const Blog = () => {
   return (

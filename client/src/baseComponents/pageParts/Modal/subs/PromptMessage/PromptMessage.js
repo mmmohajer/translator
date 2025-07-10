@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import Button from "@/baseComponents/reusableComps/Button";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Button from "@/baseComponents/reusableComponents/Button";
 
 import { clearModal } from "@/reducer/subs/modal";
 

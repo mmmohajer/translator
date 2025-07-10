@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 
+import Loading from "@/baseComponents/pageParts/Loading";
+
 import {
   setLocalStorage,
   getLocalStorage,
@@ -36,7 +38,7 @@ const BaseAppWrapper = ({ isAuthPage, children }) => {
       } else {
         removeLocalStorage("access_token");
         removeLocalStorage("refresh_token");
-        if (isAuthPage) {
+        if (!isAuthPage) {
           router.push(PAGE_ROUTES.LOGIN);
         }
         setShowAuthPage(true);

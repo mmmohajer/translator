@@ -5,33 +5,7 @@
 @GOOGLE_AUTH_CODE=GOOGLE_AUTH_CODE
 @GOOGLE_AUTH_ACCESS_TOKEN=GOOGLE_AUTH_ACCESS_TOKEN
 @GOOGLE_AUTH_ID_TOKEN=GOOGLE_AUTH_ID_TOKEN
-# ----------------- BEGINNING OF PROJECTS -----------------
 
-### Get Projects
-GET {{DOMAIN}}/api/projects/
-Content-Type: application/json
-
-# ----------------- END OF PROJECTS -----------------
-# ****************************************************************
-# ----------------- BEGINNING OF SUBSCRIBERS -----------------
-
-### Add Subscriber
-POST {{DOMAIN}}/api/subscribers/
-Content-Type: application/json
-
-{
-    "email": "mmmohajer70@gmail.com"
-}
-
-# ----------------- END OF PROJECTS -----------------
-# ****************************************************************
-# ----------------- BEGINNING OF TESTIMONIALS -----------------
-
-### Get Testimonials
-GET  {{DOMAIN}}/api/testimonials/
-Content-Type: application/json
-
-# ----------------- END OF PROJECTS -----------------
 # ****************************************************************
 # ----------------- BEGINNING OF USERS -----------------
 

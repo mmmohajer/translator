@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import cx from "classnames";
 import { useSelector } from "react-redux";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 import Label from "@/baseComponents/formComponents/Label";
-import Icon from "@/baseComponents/reusableComps/Icon";
+import Icon from "@/baseComponents/reusableComponents/Icon";
 
 const TextBox = ({
   label,

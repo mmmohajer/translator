@@ -1,4 +1,4 @@
-import Button from "@/baseComponents/reusableComps/Button";
+import Button from "@/baseComponents/reusableComponents/Button";
 
 const DisplayButton = () => {
   return (

@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import cx from "classnames";
 import ReactCrop from "react-image-crop";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import AppImage from "@/baseComponents/reusableComps/AppImage";
-import Button from "@/baseComponents/reusableComps/Button";
+import Div from "@/baseComponents/reusableComponents/Div";
+import AppImage from "@/baseComponents/reusableComponents/AppImage";
+import Button from "@/baseComponents/reusableComponents/Button";
 
 import useDivWidth from "@/hooks/useDivWidth";
 

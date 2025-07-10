@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import Icon from "@/baseComponents/reusableComps/Icon";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Icon from "@/baseComponents/reusableComponents/Icon";
 
 import { COLORS } from "@/constants/vars";
 import { clearModal } from "@/reducer/subs/modal";

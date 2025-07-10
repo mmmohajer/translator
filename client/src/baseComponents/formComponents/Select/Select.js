@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import Icon from "@/baseComponents/reusableComps/Icon";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Icon from "@/baseComponents/reusableComponents/Icon";
 import Label from "@/baseComponents/formComponents/Label";
 
 import { COLORS } from "@/constants/vars";

@@ -1,5 +1,5 @@
-import Div from "@/baseComponents/reusableComps/Div";
-import Card from "@/baseComponents/reusableComps/Card";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Card from "@/baseComponents/reusableComponents/Card";
 
 const Project = () => {
   return (

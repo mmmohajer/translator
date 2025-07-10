@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { default as BaseDatePicker } from "react-datepicker";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 import Label from "@/baseComponents/formComponents/Label";
 
 import "react-datepicker/dist/react-datepicker.css";

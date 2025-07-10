@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 
 const Base = ({
   setFile,

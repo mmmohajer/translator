@@ -1,4 +1,4 @@
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 
 const FooterNavigation = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 import MediaPicker from "@/baseComponents/formComponents/MediaPicker";
 import DragDropFileUploader from "@/baseComponents/formComponents/DragDropFileUploader";
 import DatePicker from "@/baseComponents/formComponents/DatePicker";

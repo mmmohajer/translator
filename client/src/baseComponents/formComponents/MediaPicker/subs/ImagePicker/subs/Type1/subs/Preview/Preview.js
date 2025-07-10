@@ -1,8 +1,8 @@
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import Close from "@/baseComponents/reusableComps/Close";
-import AppImage from "@/baseComponents/reusableComps/AppImage";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Close from "@/baseComponents/reusableComponents/Close";
+import AppImage from "@/baseComponents/reusableComponents/AppImage";
 
 import { COLORS } from "@/constants/vars";
 

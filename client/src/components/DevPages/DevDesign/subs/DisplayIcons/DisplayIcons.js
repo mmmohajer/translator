@@ -1,5 +1,5 @@
-import Div from "@/baseComponents/reusableComps/Div";
-import Icon from "@/baseComponents/reusableComps/Icon/Icon";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Icon from "@/baseComponents/reusableComponents/Icon/Icon";
 
 import { ICON_TYPES } from "./constants";
 

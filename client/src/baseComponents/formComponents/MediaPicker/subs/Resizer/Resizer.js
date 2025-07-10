@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import AppImage from "@/baseComponents/reusableComps/AppImage";
+import Div from "@/baseComponents/reusableComponents/Div";
+import AppImage from "@/baseComponents/reusableComponents/AppImage";
 
 import { resizeImage, getResizedImg } from "../utils";
 import {

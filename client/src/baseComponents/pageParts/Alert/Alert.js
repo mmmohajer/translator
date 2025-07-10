@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
-import Close from "@/baseComponents/reusableComps/Close";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Close from "@/baseComponents/reusableComponents/Close";
 
 import { removeAnAlertItem } from "@/utils/alert";
 import { COLORS } from "@/constants/vars";

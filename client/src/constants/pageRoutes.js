@@ -1,5 +1,6 @@
 export const PAGE_ROUTES = {
   HOME: "/",
-  LOGIN: "/",
-  DASHBOARD: "/",
+  DASHBOARD: "/app",
+  LOGIN: "/app/login",
+  REGISTER: "/app/register",
 };

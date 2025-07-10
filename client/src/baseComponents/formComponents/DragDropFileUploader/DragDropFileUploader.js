@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 import Label from "@/baseComponents/formComponents/Label";
 
 import Base from "./subs/Base";

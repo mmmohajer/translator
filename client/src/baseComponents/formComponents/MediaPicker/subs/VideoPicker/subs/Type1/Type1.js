@@ -1,8 +1,8 @@
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 import Label from "@/baseComponents/formComponents/Label";
-import Icon from "@/baseComponents/reusableComps/Icon";
+import Icon from "@/baseComponents/reusableComponents/Icon";
 
 import Preview from "./subs/Preview";
 import styles from "./Type1.module.scss";

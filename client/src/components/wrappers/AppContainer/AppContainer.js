@@ -2,7 +2,7 @@ import cx from "classnames";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Div from "@/baseComponents/reusableComps/Div/Div";
+import Div from "@/baseComponents/reusableComponents/Div/Div";
 import Modal from "@/baseComponents/pageParts/Modal";
 import Loading from "@/baseComponents/pageParts/Loading";
 import Alert from "@/baseComponents/pageParts/Alert";

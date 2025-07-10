@@ -2,7 +2,7 @@ import { useRef } from "react";
 import cx from "classnames";
 import { Editor } from "@tinymce/tinymce-react";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 
 import { TINY_CME_API_KEY } from "config";
 

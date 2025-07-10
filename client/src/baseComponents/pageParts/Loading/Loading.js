@@ -1,6 +1,6 @@
 import cx from "classnames";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 
 import styles from "./Loading.module.scss";
 

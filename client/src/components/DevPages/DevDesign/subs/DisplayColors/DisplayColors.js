@@ -1,4 +1,4 @@
-import Div from "@/baseComponents/reusableComps/Div/Div";
+import Div from "@/baseComponents/reusableComponents/Div/Div";
 
 import { COLORS } from "@/constants/vars";
 

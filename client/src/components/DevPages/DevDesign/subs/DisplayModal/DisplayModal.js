@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import Button from "@/baseComponents/reusableComps/Button";
+import Button from "@/baseComponents/reusableComponents/Button";
 
 import { setModal } from "@/reducer/subs/modal";
 

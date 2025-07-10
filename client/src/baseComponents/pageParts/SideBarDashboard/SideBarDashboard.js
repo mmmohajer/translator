@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 
-import Div from "@/baseComponents/reusableComps/Div";
+import Div from "@/baseComponents/reusableComponents/Div";
 
 import { toggleSideBarDashboard } from "@/reducer/subs/sideBarDashboardIsActive";
 
