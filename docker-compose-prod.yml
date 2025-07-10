@@ -16,6 +16,14 @@ services:
     depends_on:
       - client
       - api
+  certbot:
+    restart: always
+    image: certbot/certbot
+    volumes:
+      - ./nginx/certbot/conf:/etc/letsencrypt
+      - ./nginx/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
   client:
     restart: always
     build:
@@ -80,7 +88,7 @@ services:
       - ./secrets/api/.env
     volumes:
       - ./volume_data/django_static:/usr/src/app/vol
-    command: celery -A config flower --url_prefix=/flower
+    command: celery -A config flower --url_prefix=/flower --basic_auth=${CELERY_FLOWER_USER}:${CELERY_FLOWER_PASSWORD}
     depends_on:
       - db
       - redis

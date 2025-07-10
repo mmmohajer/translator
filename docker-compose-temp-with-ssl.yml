@@ -13,6 +13,7 @@ services:
       - ./client_temporary:/etc/site
 
   certbot:
+    restart: always
     image: certbot/certbot
     volumes:
       - ./nginx/certbot/conf:/etc/letsencrypt
