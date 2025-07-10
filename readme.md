@@ -1,3 +1,5 @@
-## 📂 Initial Setup
+## 📖 Documentation Index
 
-See detailed instructions here: [Initial Setup Guide](./docs/initial_setup/readme.md)
+- [Initial Setup Guide](./docs/initial_setup/readme.md)
+- [Client (Frontend) Setup](./docs/client/readme.md)
+- [Deployment Guide](./docs/deployment/readme.md)
