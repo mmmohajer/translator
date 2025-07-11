@@ -15,6 +15,7 @@ import DisplayCarousel from "./subs/DisplayCarousel";
 import DisplayAlert from "./subs/DisplayAlert";
 import DisplayRowColumn from "./subs/DisplayRowColumn";
 import DisplayForm from "./subs/DisplayForm";
+import DisplayTable from "./subs/DisplayTable";
 
 import { DESIGN_ITEMS } from "./constants";
 
@@ -79,6 +80,7 @@ const DevDesign = () => {
               {chosenItem === "alert" ? <DisplayAlert /> : ""}
               {chosenItem === "row-column" ? <DisplayRowColumn /> : ""}
               {chosenItem === "form" ? <DisplayForm /> : ""}
+              {chosenItem === "table" ? <DisplayTable /> : ""}
             </Div>
           </Div>
         )}

@@ -9,4 +9,5 @@ export const DESIGN_ITEMS = [
   { identifier: "alert", title: "Alert" },
   { identifier: "row-column", title: "Row - Column" },
   { identifier: "form", title: "Form" },
+  { identifier: "table", title: "Table" },
 ];
