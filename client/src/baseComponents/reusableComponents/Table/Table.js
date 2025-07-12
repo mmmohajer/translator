@@ -3,7 +3,12 @@ import Div from "@/baseComponents/reusableComponents/Div";
 
 import useDivWidth from "@/hooks/useDivWidth";
 
-const Table = ({ headingData, bodyData, useFullWidth = true }) => {
+const Table = ({
+  headingTitleRows,
+  headingData,
+  bodyData,
+  useFullWidth = true,
+}) => {
   const { containerRef, width } = useDivWidth();
 
   const colWidths = useMemo(() => {
@@ -24,6 +29,23 @@ const Table = ({ headingData, bodyData, useFullWidth = true }) => {
     <>
       <Div ref={containerRef} className="width-per-100">
         <Div>
+          {headingTitleRows?.map((row, idx) => (
+            <Div type="flex" key={idx}>
+              {row.map((col, colIdx) => (
+                <Div
+                  key={col?.identifier}
+                  style={{
+                    width: `${colWidths
+                      .slice(colIdx, colIdx + col.colSpan || 1)
+                      .reduce((a, b) => a + b, 0)}px`,
+                  }}
+                  className="br-all-solid-1 br-black"
+                >
+                  {col?.display}
+                </Div>
+              ))}
+            </Div>
+          ))}
           <Div type="flex">
             {headingData?.map((col, idx) => (
               <Div

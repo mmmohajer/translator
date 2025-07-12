@@ -1,5 +1,28 @@
 import Div from "@/baseComponents/reusableComponents/Div";
 
+export const HEADING_TITLE_ROWS = () => [
+  [
+    {
+      identifier: "name",
+      display: (
+        <Div type="flex" hAlign="center" vAlign="center" className="bg-red">
+          Name
+        </Div>
+      ),
+      colSpan: 1,
+    },
+    {
+      identifier: "userInfo",
+      display: (
+        <Div type="flex" hAlign="center" vAlign="center" className="bg-purple">
+          User Info
+        </Div>
+      ),
+      colSpan: 2,
+    },
+  ],
+];
+
 export const HEADING_DATA = () => [
   {
     identifier: "name",
