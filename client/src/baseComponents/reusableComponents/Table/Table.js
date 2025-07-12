@@ -16,8 +16,14 @@ const Table = ({
 
   const colWidths = useMemo(() => {
     if (!headingData?.length) return [];
-    return headingData.map((col) => col?.width);
-  }, [headingData]);
+    const baseWidths = headingData.map((col) => col?.width);
+    const totalBaseWidth = baseWidths.reduce((a, b) => a + b, 0);
+    if (useFullWidth && width && totalBaseWidth < width) {
+      const stretchWidth = width / baseWidths.length;
+      return baseWidths.map(() => stretchWidth);
+    }
+    return baseWidths;
+  }, [headingData, useFullWidth, width]);
 
   const totalTableWidth = useMemo(() => {
     return colWidths.reduce((a, b) => a + b, 0);

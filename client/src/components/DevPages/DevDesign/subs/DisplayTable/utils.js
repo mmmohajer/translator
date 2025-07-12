@@ -40,7 +40,7 @@ export const HEADING_DATA = () => [
         Name
       </Div>
     ),
-    width: 500,
+    width: 160,
   },
   {
     identifier: "city",
@@ -50,7 +50,7 @@ export const HEADING_DATA = () => [
         City
       </Div>
     ),
-    width: 500,
+    width: 80,
   },
   {
     identifier: "age",
@@ -60,12 +60,12 @@ export const HEADING_DATA = () => [
         Age
       </Div>
     ),
-    width: 500,
+    width: 80,
   },
   {
     identifier: "email",
     display: null,
-    width: 500,
+    width: 160,
   },
 ];
 
