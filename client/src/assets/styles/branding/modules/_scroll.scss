@@ -6,15 +6,16 @@
   &::-webkit-scrollbar {
     width: 20px;
     height: 20px;
+    background-color: aqua;
   }
 
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px map.get($brandingColors, "theme-four");
+    box-shadow: inset 0 0 5px gray;
     border-radius: 10px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: map.get($brandingColors, "theme-three");
+    background: yellow;
     border-radius: 10px;
   }
 }

@@ -15,6 +15,7 @@ const DisplayTable = () => {
         headingData={HEADING_DATA()}
         bodyData={bodyData}
         useFullWidth={true}
+        className={"bg-orange"}
       />
     </Div>
   );

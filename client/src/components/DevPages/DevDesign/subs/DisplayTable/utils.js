@@ -1,26 +1,34 @@
 import Div from "@/baseComponents/reusableComponents/Div";
 
 export const HEADING_TITLE_ROWS = () => [
-  [
-    {
-      identifier: "name",
-      display: (
-        <Div type="flex" hAlign="center" vAlign="center" className="bg-red">
-          Name
-        </Div>
-      ),
-      colSpan: 1,
-    },
-    {
-      identifier: "userInfo",
-      display: (
-        <Div type="flex" hAlign="center" vAlign="center" className="bg-purple">
-          User Info
-        </Div>
-      ),
-      colSpan: 2,
-    },
-  ],
+  {
+    identifier: "name",
+    display: (
+      <Div type="flex" hAlign="center" vAlign="center" className="bg-red">
+        Name
+      </Div>
+    ),
+    colSpan: 1,
+  },
+  {
+    identifier: "userInfo",
+    display: (
+      <Div type="flex" hAlign="center" vAlign="center" className="bg-purple">
+        User Info
+      </Div>
+    ),
+    colSpan: 2,
+  },
+  {
+    identifier: "email",
+    display: (
+      <Div type="flex" hAlign="center" vAlign="center" className="bg-orange">
+        Email
+      </Div>
+    ),
+    colSpan: 1,
+    rowSpan: 2,
+  },
 ];
 
 export const HEADING_DATA = () => [
@@ -32,17 +40,7 @@ export const HEADING_DATA = () => [
         Name
       </Div>
     ),
-    width: 120,
-  },
-  {
-    identifier: "age",
-    name: "Age",
-    display: (
-      <Div type="flex" hAlign="center" vAlign="center" className="bg-green">
-        Age
-      </Div>
-    ),
-    width: 80,
+    width: 500,
   },
   {
     identifier: "city",
@@ -52,7 +50,22 @@ export const HEADING_DATA = () => [
         City
       </Div>
     ),
-    width: 120,
+    width: 500,
+  },
+  {
+    identifier: "age",
+    name: "Age",
+    display: (
+      <Div type="flex" hAlign="center" vAlign="center" className="bg-green">
+        Age
+      </Div>
+    ),
+    width: 500,
+  },
+  {
+    identifier: "email",
+    display: null,
+    width: 500,
   },
 ];
 
@@ -82,6 +95,15 @@ export const BODY_DATA = (MOCK_DATA) =>
       display: (
         <Div type="flex" hAlign="center" vAlign="center">
           {user?.city}
+        </Div>
+      ),
+    },
+    email: {
+      identifier: "email",
+      value: user?.email,
+      display: (
+        <Div type="flex" hAlign="center" vAlign="center">
+          {user?.email}
         </Div>
       ),
     },
