@@ -14,11 +14,13 @@ const Select = ({
   placeHolder,
   label,
   isRequired,
+  optionsContainerIsAbsolute = true,
+  optionsContainerWidth = "100%",
 }) => {
   const [showOptions, setShowOptions] = useState(false);
   return (
     <>
-      {showOptions ? (
+      {showOptions && optionsContainerIsAbsolute ? (
         <Div
           onClick={() => {
             setShowOptions(false);
@@ -31,7 +33,7 @@ const Select = ({
       <Label label={label} isRequired={isRequired} />
       <Div
         className={cx(
-          "p-all-temp-1 f-s-px-14 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100 pos-rel"
+          "p-all-temp-1 f-s-px-14 br-rad-px-10 br-all-solid-2 br-black width-per-100 pos-rel"
         )}
       >
         <Div
@@ -62,11 +64,13 @@ const Select = ({
           type="flex"
           direction="vertical"
           className={cx(
-            "pos-abs pos-abs--lb bg-white width-per-100 global-transition-one of-y-auto scroll-type-one br-rad-px-10"
+            `bg-white width-per-100 global-transition-one of-y-auto scroll-type-one br-rad-px-10`,
+            optionsContainerIsAbsolute ? "pos-abs pos-abs--lb" : "pos-rel"
           )}
           style={{
             maxHeight: showOptions ? "300px" : "0px",
             zIndex: 100000000,
+            width: optionsContainerWidth,
           }}
         >
           {options?.map((item, idx) => (

@@ -29,7 +29,7 @@ const TextBox = ({
   return (
     <>
       <Label label={label} isRequired={isRequired} />
-      <Div className="pos-rel">
+      <Div className="pos-rel width-per-100">
         <input
           {...props}
           value={val}
