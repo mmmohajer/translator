@@ -29,9 +29,11 @@ const Select = ({ options, val, setVal, placeHolder, label, isRequired }) => {
           )}
         >
           <Div>
-            {val
-              ? options.find((opt) => opt.value === val)?.shownText || val
-              : placeHolder}
+            {val ? (
+              options.find((opt) => opt.value === val)?.shownText || val
+            ) : (
+              <span className="text-slategray f-s-px-12">{placeHolder}</span>
+            )}
           </Div>
           <Div
             className={cx(
