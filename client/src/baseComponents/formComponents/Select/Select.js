@@ -8,11 +8,11 @@ import Label from "@/baseComponents/formComponents/Label";
 
 import { COLORS } from "@/constants/vars";
 
-const Select = ({ options, val, setVal, placeHolder, label }) => {
+const Select = ({ options, val, setVal, placeHolder, label, isRequired }) => {
   const [showOptions, setShowOptions] = useState(false);
   return (
     <>
-      <Label label={label} />
+      <Label label={label} isRequired={isRequired} />
       <Div
         className={cx(
           "p-all-temp-1 f-s-px-14 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100 bg-white text-theme-five br-black"
