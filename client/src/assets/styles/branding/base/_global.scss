@@ -74,6 +74,7 @@ p {
 
 .global- {
   &container {
+    width: 100%;
     max-width: $maxContainerWidth;
     margin: 0 auto;
   }

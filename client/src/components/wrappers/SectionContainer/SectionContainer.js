@@ -1,7 +1,7 @@
 import cx from "classnames";
 
-import Div from "@/baseComponents/Div";
-import Heading from "@/baseComponents/Heading";
+import Div from "@/baseComponents/reusableComponents/Div";
+import Heading from "@/baseComponents/reusableComponents/Heading";
 
 const SectionContainer = ({
   title,
@@ -24,7 +24,7 @@ const SectionContainer = ({
             <Heading type={3}>{title}</Heading>
           </Div>
         ) : null}
-        <Div>{children}</Div>
+        <Div className="width-per-100">{children}</Div>
       </Div>
     </>
   );
