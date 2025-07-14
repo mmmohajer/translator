@@ -87,7 +87,7 @@ deployToProdWithCompose() {
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin master;
-docker compose -f docker-compose-prod.yml build && docker-compose -f docker-compose-prod.yml up -d && docker volume prune -f && docker builder prune -a -f && docker image prune -a -f && docker container prune -f && docker network prune -f
+docker compose -f docker-compose-prod.yml build && docker compose -f docker-compose-prod.yml up -d && docker volume prune -f && docker builder prune -a -f && docker image prune -a -f && docker container prune -f && docker network prune -f
 EOF
 )
 ssh $PROD_SERVER_ALIAS "$script" 
