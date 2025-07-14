@@ -20,6 +20,12 @@ const Base = ({
 
   const [dragActive, setDragActive] = useState(false);
 
+  const handleContainerClick = () => {
+    if (inputRef.current) {
+      inputRef.current.click();
+    }
+  };
+
   const handleDrag = function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -59,6 +65,7 @@ const Base = ({
     <>
       <Div
         className={cx("pos-rel", mainContainerClassName)}
+        onClick={handleContainerClick}
         onDragEnter={handleDrag}
         onSubmit={(e) => e.preventDefault()}
       >
