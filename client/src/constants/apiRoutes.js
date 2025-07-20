@@ -9,3 +9,6 @@ export const USER_LOGOUT_API_ROUTE = "/api/user-logout/";
 export const USER_AUTH_WITH_GOOGLE_API_ROUTE = "/api/user-auth-with-google/";
 export const USER_LOGIN_WITH_GOOGLE_API_ROUTE = "/api/user-login-with-google/";
 export const PROFILE_API_ROUTE = "/api/profile/";
+
+// WEBSOCKET API ROUTES
+export const WEBSOCKET_TEST_API_ROUTE = `/wss/test-socket/`;

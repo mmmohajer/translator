@@ -16,6 +16,7 @@ import DisplayAlert from "./subs/DisplayAlert";
 import DisplayRowColumn from "./subs/DisplayRowColumn";
 import DisplayForm from "./subs/DisplayForm";
 import DisplayTable from "./subs/DisplayTable";
+import TestSocket from "./subs/TestSocket";
 
 import { DESIGN_ITEMS } from "./constants";
 
@@ -81,6 +82,7 @@ const DevDesign = () => {
               {chosenItem === "row-column" ? <DisplayRowColumn /> : ""}
               {chosenItem === "form" ? <DisplayForm /> : ""}
               {chosenItem === "table" ? <DisplayTable /> : ""}
+              {chosenItem === "test-socket" ? <TestSocket /> : ""}
             </Div>
           </Div>
         )}

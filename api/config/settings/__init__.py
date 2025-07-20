@@ -16,6 +16,7 @@ from config.settings.celery import *
 from config.settings.cache import *
 from config.settings.email import *
 from config.settings.rest_framework import *
+from config.settings.channels import *
 
 if not WITH_DOCKER:
     MIDDLEWARE.append('corsheaders.middleware.CorsMiddleware')

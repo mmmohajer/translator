@@ -94,6 +94,22 @@ services:
       - redis-cache
       - pgbouncer
 
+  channels:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./api
+    env_file:
+      - ./secrets/api/.env
+    volumes:
+      - ./api:/usr/src/app
+    # command: daphne -b 0.0.0.0 -p 8001 config.asgi:application
+    command: ./run-daphne-dev.sh
+    depends_on:
+      - db
+      - redis
+      - redis-cache
+      - pgbouncer
+
   pgbouncer:
     image: edoburu/pgbouncer:v1.23.1-p2
     ports:
