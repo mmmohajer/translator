@@ -48,9 +48,7 @@ const useApiCalls = ({
         }
         res = await axios.get(curUrl, { headers: headers || {} });
         if (showLoading) {
-          if (showLoading) {
-            dispatch(setLoaded());
-          }
+          dispatch(setLoaded());
         }
         if (res?.data) {
           setData(res.data);

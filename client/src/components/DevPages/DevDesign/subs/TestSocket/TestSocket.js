@@ -20,7 +20,7 @@ const TestSocket = () => {
     },
     onOpen: () => {
       console.log("WebSocket connection opened");
-      send({ action: "subscribe" });
+      send({ action: "process_data" });
     },
     onError: (error) => {
       console.error("WebSocket error:", error);
