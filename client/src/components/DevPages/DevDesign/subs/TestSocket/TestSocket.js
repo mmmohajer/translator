@@ -10,7 +10,7 @@ const TestSocket = () => {
   // WebSocket connection
   // ------------------------------------------------
   const [sendReq, setSendReq] = useState(false);
-  const socketRef = useWebSocket({
+  const { socketRef, send } = useWebSocket({
     sendReq,
     setSendReq,
     url: WEBSOCKET_TEST_API_ROUTE,
@@ -20,7 +20,7 @@ const TestSocket = () => {
     },
     onOpen: () => {
       console.log("WebSocket connection opened");
-      socketRef.current.send(JSON.stringify({ action: "subscribe" }));
+      send({ action: "subscribe" });
     },
     onError: (error) => {
       console.error("WebSocket error:", error);

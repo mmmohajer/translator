@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 
+import { setLoading, setLoaded } from "@/reducer/subs/isLoading";
+import { addNewAlertItem } from "@/utils/alert";
 import { WITH_DOCKER, APP_DOMAIN } from "config";
 
 const useWebSocket = ({
@@ -10,14 +13,30 @@ const useWebSocket = ({
   onMessage,
   onError,
   onClose,
-  initialMessage,
+  showLoading = true,
+  showErrerMessage = true,
 }) => {
   const socketRef = useRef(null);
+  const dispatch = useDispatch();
+
+  const send = (data) => {
+    const socket = socketRef.current;
+    if (socket && socket.readyState === WebSocket.OPEN) {
+      if (typeof data === "object") {
+        socket.send(JSON.stringify(data));
+      } else {
+        socket.send(data);
+      }
+    }
+  };
 
   useEffect(() => {
     let curUrl;
 
     if (sendReq) {
+      if (showLoading) {
+        dispatch(setLoading());
+      }
       if (!url) return;
       if (!WITH_DOCKER) {
         curUrl = `ws://localhost:8000${url}`;
@@ -29,7 +48,9 @@ const useWebSocket = ({
       socketRef.current = socket;
 
       socket.onopen = () => {
-        if (initialMessage) socket.send(initialMessage);
+        if (showLoading) {
+          dispatch(setLoaded());
+        }
         if (onOpen) onOpen(socket);
       };
 
@@ -38,10 +59,27 @@ const useWebSocket = ({
       };
 
       socket.onerror = (error) => {
+        if (showLoading) {
+          dispatch(setLoaded());
+        }
+        if (showErrerMessage) {
+          if (error?.message) {
+            addNewAlertItem(dispatch, "error", `❌ ${error.message}`);
+          } else {
+            addNewAlertItem(
+              dispatch,
+              "error",
+              "❌ Something went wrong; please try again!"
+            );
+          }
+        }
         if (onError) onError(error);
       };
 
       socket.onclose = () => {
+        if (showLoading) {
+          dispatch(setLoaded());
+        }
         if (onClose) onClose();
       };
       setTimeout(() => {
@@ -50,7 +88,7 @@ const useWebSocket = ({
     }
   }, [url, sendReq]);
 
-  return socketRef;
+  return { socketRef, send };
 };
 
 export default useWebSocket;
