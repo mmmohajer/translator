@@ -39,39 +39,6 @@ This document explains the structure and conventions of the frontend client, bui
 
 ---
 
-## 📑 Table of Contents
-
-1. [SCSS & CSS Class Conventions](#-scss--css-class-conventions)
-   1. [CSS Class Patterns](#-css-class-patterns)
-   2. [Color Utility Classes](#-color-utility-classes)
-   3. [Width & Height Utility Classes](#-width--height-utility-classes)
-   4. [Border Utility Classes](#-border-utility-classes)
-   5. [Margin & Padding Utility Classes](#-margin--padding-utility-classes)
-   6. [Heading Utility Classes](#-heading-utility-classes)
-   7. [Font Utility Classes](#-font-utility-classes)
-   8. [Display Utility Classes (Responsive Visibility)](#-display-utility-classes-responsive-visibility)
-   9. [Other Utility & Customization Classes](#-other-utility--customization-classes)
-   10. [Global and Custom Classes](#-global-and-custom-classes)
-2. [Responsive Mixins](#-responsive-mixins)
-3. [Component-Level Modular SCSS](#-component-level-modular-scss)
-4. [Reusable Base Components](#-reusable-base-components)
-   1. [Div Component](#-div-component)
-   2. [Accordion Component](#-accordion-component)
-   3. [AnimateContainerOnScroll Component](#-animatecontaineronscroll-component)
-   4. [Anchor Component](#anchor-component)
-   5. [AppImage Component](#-appimage-component)
-   6. [AppVideo Component](#-appvideo-component)
-   7. [Button Component](#-button-component)
-   8. [Carousel Component](#-carousel-component)
-   9. [DivConvertTextToHtml Component](#-divconverttexttohtml-component)
-   10. [Heading Component](#-heading-component)
-   11. [Icon Component](#-icon-component)
-   12. [Paragraph Component](#-paragraph-component)
-   13. [SVGIcon Component](#-svgicon-component)
-   14. [Table Component](#-table-component)
-
----
-
 ## 🎨 SCSS & CSS Class Conventions
 
 # 🏷️ CSS Class Patterns
