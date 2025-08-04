@@ -2,7 +2,18 @@
 
 ## Table of Contents
 
-- [SCSS Structure & Usage](#scss-structure--usage)
+- [CSS/SCSS Structure & Utilities](#cssscss-structure--utilities)
+  - [Margin & Padding Utility Classes](#-margin--padding-utility-classes)
+  - [Heading Utility Classes](#-heading-utility-classes)
+  - [Font Utility Classes](#-font-utility-classes)
+  - [Display Utility Classes (Responsive Visibility)](#-display-utility-classes-responsive-visibility)
+  - [Other Utility & Customization Classes](#-other-utility--customization-classes)
+    - [Scrollbar Customization](#scrollbar-customization)
+    - [Text Truncation](#text-truncation)
+    - [Form Required Indicator](#form-required-indicator)
+    - [Link Styling](#link-styling)
+    - [Position Utilities](#position-utilities)
+  - [Global and Custom Classes](#-global-and-custom-classes)
   - [Responsive Mixins](#-responsive-mixins)
   - [Component-Level Modular SCSS](#-component-level-modular-scss)
 - [Reusable Base Components](#-reusable-base-components)
