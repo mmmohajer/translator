@@ -262,27 +262,6 @@ Heading styles are generated for all heading levels (`h1`–`h6`) using responsi
   - `h2-xs`, `h2-sm`, ... up to `h6-lg`
 - Font weight is set by `$brandingFontHeadingWeight` (e.g., `bold`).
 
-### Example SCSS Usage
-
-```scss
-@each $header in (1, 2, 3, 4, 5, 6) {
-  h#{$header} {
-    width: 100%;
-    font-family: "Open Sans", sans-serif;
-    font-size: map.get($brandingHeadingFontSizes, "h#{$header}-xs");
-    @include atSmall {
-      font-size: map.get($brandingHeadingFontSizes, "h#{$header}-sm");
-    }
-    @include atMedium {
-      font-size: map.get($brandingHeadingFontSizes, "h#{$header}-md");
-    }
-    @include atLarge {
-      font-size: map.get($brandingHeadingFontSizes, "h#{$header}-lg");
-    }
-  }
-}
-```
-
 ### Variables
 
 - Font sizes: `$brandingHeadingFontSizes` in `src/assets/styles/branding/base/_variables.scss`
