@@ -759,6 +759,8 @@ The `AppImage` component is a responsive, feature-rich image wrapper built on to
 
 This renders a responsive image with a loading spinner, custom wrapper and image classes, and a click handler.
 
+---
+
 ### 🟧 AppVideo Component
 
 The `AppVideo` component is a simple, reusable wrapper for rendering HTML5 videos with customizable width, height, and additional props. It is designed for easy integration and extension in React projects.
@@ -1285,6 +1287,8 @@ The `DatePicker` component is a styled wrapper around `react-datepicker` for sel
 
 This will render a date picker with a label, required indicator, and dropdowns for year and month.
 
+---
+
 ### 🟦 CheckBox Component
 
 The `CheckBox` component is a styled, controlled checkbox with a label and required indicator, using utility classes and custom icons for a modern look.
@@ -1313,6 +1317,8 @@ The `CheckBox` component is a styled, controlled checkbox with a label and requi
 ```
 
 This will render a checkbox with a label and required indicator, updating `accepted` when clicked.
+
+---
 
 ### 🟦 MediaPicker Component
 
@@ -1438,87 +1444,10 @@ The `Modal` component provides a flexible modal dialog system, integrated with R
 **How It Works:**
 
 - Listens to the Redux `modal` state to determine the modal type and props.
-- Renders a fixed-position container with a close button (using the `Icon` component).
+- Renders a fixed-position container with a close button.
 - The close button dispatches `clearModal()` to hide the modal.
 - The modal content area conditionally renders subcomponents based on the `type` (e.g., `PromptMessage`).
 - Uses utility classes and a CSS module for styling and animation.
-
-**Code Example:**
-
-```jsx
-import { useDispatch, useSelector } from "react-redux";
-import cx from "classnames";
-
-import Div from "@/baseComponents/reusableComponents/Div";
-import Icon from "@/baseComponents/reusableComponents/Icon";
-
-import { COLORS } from "@/constants/vars";
-import { clearModal } from "@/reducer/subs/modal";
-
-import PromptMessage from "./subs/PromptMessage";
-import styles from "./Modal.module.scss";
-
-const Modal = () => {
-  const dispatch = useDispatch();
-  const { type } = useSelector((state) => state.modal);
-  return (
-    <>
-      <Div className={cx("pos-fix br-rad-px-10 p-b-temp-8", styles.container)}>
-        <Div className="width-per-100 height-px-40 pos-rel">
-          <Div
-            type="flex"
-            hAlign="center"
-            vAlign="center"
-            className="pos-abs bg-theme-five width-px-30 height-px-30 br-rad-per-50 mouse-hand"
-            style={{ top: "5px", right: "10px" }}
-            onClick={() => dispatch(clearModal())}
-          >
-            <Icon type="close" color={COLORS["theme-one"]} />
-          </Div>
-        </Div>
-        <Div className="p-x-temp-8">
-          {type === "prompt-message" ? <PromptMessage /> : ""}
-        </Div>
-      </Div>
-    </>
-  );
-};
-
-export default Modal;
-```
-
-#### **PromptMessage Component**
-
-The `PromptMessage` component is a simple modal content block for displaying a message and an OK button. It is typically used for confirmations or alerts that require user acknowledgment.
-
-**Code Example:**
-
-```jsx
-import { useDispatch, useSelector } from "react-redux";
-
-import Div from "@/baseComponents/reusableComponents/Div";
-import Button from "@/baseComponents/reusableComponents/Button";
-
-import { clearModal } from "@/reducer/subs/modal";
-
-const PromptMessage = () => {
-  const dispatch = useDispatch();
-  const { message } = useSelector((state) => state.modal.props);
-
-  return (
-    <>
-      <Div className="m-b-temp-8">{message}</Div>
-      <Button
-        btnText={"OK"}
-        className={"width-px-200"}
-        onClick={() => dispatch(clearModal())}
-      />
-    </>
-  );
-};
-
-export default PromptMessage;
-```
 
 #### **Example Usage**
 
@@ -1563,7 +1492,7 @@ This will open a modal with your custom message and an OK button to close it.
 
 # 📦 Custom React Hooks Documentation
 
-This document introduces three custom React hooks designed for scalable, maintainable, and DRY code in your project. Each hook is fully integrated with Redux and provides a clean API for common frontend needs.
+This document introduces custom React hooks designed for scalable, maintainable, and DRY code in your project. Each hook is fully integrated with Redux and provides a clean API for common frontend needs.
 
 ---
 
