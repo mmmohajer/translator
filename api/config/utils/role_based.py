@@ -1,6 +1,6 @@
 from django.contrib.auth.models import Group
 
-LIST_OF_GROUPS = ["CLIENT", "ADMIN"]
+LIST_OF_GROUPS = ["ADMIN"]
 
 def build_group_list():
     for group in LIST_OF_GROUPS:
@@ -11,3 +11,10 @@ def build_group_list():
             print(
                 f"We couldn't create a group with name {group}. It seems {group} has already been declared as a group name.")
     return
+
+def isAdmin(user):
+    user_groups_queryset = user.groups.all()
+    cur_user_groups = [group.name for group in list(user_groups_queryset)]
+    if "Admin" in cur_user_groups:
+        return True
+    return False
