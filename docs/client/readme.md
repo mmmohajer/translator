@@ -3,6 +3,9 @@
 ## Table of Contents
 
 - [CSS/SCSS Structure & Utilities](#cssscss-structure--utilities)
+  - [Color Utility Classes](#-color-utility-classes)
+  - [Width & Height Utility Classes](#-width--height-utility-classes)
+  - [Border Utility Classes](#-border-utility-classes)
   - [Margin & Padding Utility Classes](#-margin--padding-utility-classes)
   - [Heading Utility Classes](#-heading-utility-classes)
   - [Font Utility Classes](#-font-utility-classes)
