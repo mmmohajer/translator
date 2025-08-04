@@ -92,8 +92,9 @@ To add or update a color:
 
 **Example usage:**
 
-````html
+```html
 <div class="bg-theme-one text-white border-red">Themed content</div>
+```
 
 ---
 
@@ -153,7 +154,7 @@ const Modal = () => {
 };
 
 export default Modal;
-````
+```
 
 #### **PromptMessage Component**
 
