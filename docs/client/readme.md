@@ -1156,8 +1156,8 @@ The `Icon` component is a flexible wrapper for rendering FontAwesome icons with 
 | -------- | -------- | ------- | -------------------------------------------------------------- |
 | `type`   | `string` | "close" | The icon type to render (see list below for supported values). |
 | `color`  | `string` | "black" | The color of the icon (any valid CSS color value).             |
-| `width`  | `string` | "16px"  | The width of the icon (e.g., `"24px"`).                        |
-| `height` | `string` | "16px"  | The height of the icon (e.g., `"24px"`).                       |
+| `width`  | `string` | "16px"  | The width of the icon (e.g., `30`).                            |
+| `height` | `string` | "16px"  | The height of the icon (e.g., `30`).                           |
 | `scale`  | `number` | `1`     | Scale factor for the icon (applies CSS `transform: scale()`).  |
 
 #### **Supported `type` Values**
@@ -1173,7 +1173,7 @@ The `Icon` component is a flexible wrapper for rendering FontAwesome icons with 
 #### **Example Usage**
 
 ```jsx
-<Icon type="close" color="#f00" width="24px" height="24px" />
+<Icon type="close" color="#f00" width={30} height={30} />
 <Icon type="instagram" color="#833AB4" scale={1.5} />
 <Icon type="left" />
 ```
@@ -1345,16 +1345,15 @@ The `TextBox` component is a flexible, styled input field with label, password v
 
 #### **Props**
 
-| Prop             | Type       | Default | Description                                                     |
-| ---------------- | ---------- | ------- | --------------------------------------------------------------- |
-| `label`          | `string`   | —       | The label text to display above the input.                      |
-| `val`            | `string`   | —       | The current value of the input (controlled).                    |
-| `setVal`         | `function` | —       | Function to update the value.                                   |
-| `placeHolder`    | `string`   | —       | Placeholder text for the input.                                 |
-| `isRequired`     | `boolean`  | `false` | If true, shows a required indicator on the label.               |
-| `forceLightMode` | `boolean`  | `false` | If true, forces light mode styling.                             |
-| `isNotEditable`  | `boolean`  | `false` | If true, input is read-only and cannot be edited.               |
-| `...props`       | `any`      | —       | Any other props are spread to the underlying `<input>` element. |
+| Prop            | Type       | Default | Description                                                     |
+| --------------- | ---------- | ------- | --------------------------------------------------------------- | --- |
+| `label`         | `string`   | —       | The label text to display above the input.                      |
+| `val`           | `string`   | —       | The current value of the input (controlled).                    |
+| `setVal`        | `function` | —       | Function to update the value.                                   |
+| `placeHolder`   | `string`   | —       | Placeholder text for the input.                                 |
+| `isRequired`    | `boolean`  | `false` | If true, shows a required indicator on the label.               |     |
+| `isNotEditable` | `boolean`  | `false` | If true, input is read-only and cannot be edited.               |
+| `...props`      | `any`      | —       | Any other props are spread to the underlying `<input>` element. |
 
 #### **How It Works**
 
