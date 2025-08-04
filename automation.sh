@@ -31,11 +31,14 @@ run() {
             [ $selected == 1 ] && createReactComponent
             [ $selected == 2 ] && createReactPage
             [ $selected == 3 ] && addDjangoApp
-            [ $selected == 4 ] && deployInLocal
-            [ $selected == 5 ] && deployToProdWithSwarm
-            [ $selected == 6 ] && deployToProdWithCompose
-            [ $selected == 7 ] && makeBackupOfDb
-            [ $selected == 8 ] && restoreDb
+            [ $selected == 4 ] && createDjangoModel
+            [ $selected == 5 ] && createDjangoSerializer
+            [ $selected == 6 ] && createDjangoView
+            [ $selected == 7 ] && deployInLocal
+            [ $selected == 8 ] && deployToProdWithSwarm
+            [ $selected == 9 ] && deployToProdWithCompose
+            [ $selected == 10 ] && makeBackupOfDb
+            [ $selected == 11 ] && restoreDb
         else
             run
         fi

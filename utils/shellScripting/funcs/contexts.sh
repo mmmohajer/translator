@@ -54,3 +54,48 @@ echo """from django.urls import path, include
 from rest_framework import routers
 """
 }
+
+getDjangoModelContext() {
+echo """from django.db import models
+
+from core.models.base_model import TimeStampedUUIDModel
+
+
+class ModelName(TimeStampedUUIDModel):
+    # Add your fields here
+
+    def __str__(self):
+        return f\"String to return\"
+
+    class Meta:
+        verbose_name_plural = \"Plural Name\"
+        ordering = ('id',)
+"""
+}
+
+getDjangoSerializerContext() {
+echo """from rest_framework import serializers
+
+class SerializerNameSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        # model = Your_ModelName
+        fields = ['id', 'updated_at', 'created_at']
+"""
+}
+
+getDjangoViewContext() {
+echo """from rest_framework import views, permissions, response, status
+
+
+class ViewNameViewSet(views.APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, format=None):
+        try:
+            # Logic here
+            return response.Response(status=status.HTTP_200_OK, data={})
+        except Exception as e:
+            return response.Response(status=status.HTTP_400_BAD_REQUEST, data={\"message\": f\"{str(e)}\"})
+"""
+}
