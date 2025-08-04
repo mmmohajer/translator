@@ -1345,15 +1345,13 @@ The `TextBox` component is a flexible, styled input field with label, password v
 
 #### **Props**
 
-| Prop            | Type       | Default | Description                                                     |
-| --------------- | ---------- | ------- | --------------------------------------------------------------- | --- |
-| `label`         | `string`   | —       | The label text to display above the input.                      |
-| `val`           | `string`   | —       | The current value of the input (controlled).                    |
-| `setVal`        | `function` | —       | Function to update the value.                                   |
-| `placeHolder`   | `string`   | —       | Placeholder text for the input.                                 |
-| `isRequired`    | `boolean`  | `false` | If true, shows a required indicator on the label.               |     |
-| `isNotEditable` | `boolean`  | `false` | If true, input is read-only and cannot be edited.               |
-| `...props`      | `any`      | —       | Any other props are spread to the underlying `<input>` element. |
+| Prop          | Type      | Default | Description                                                     |
+| ------------- | --------- | ------- | --------------------------------------------------------------- | --- |
+| `label`       | `string`  | —       | The label text to display above the input.                      |
+| `val`         | `string`  | —       | The current value of the input (controlled).                    |
+| `placeHolder` | `string`  | —       | Placeholder text for the input.                                 |
+| `isRequired`  | `boolean` | `false` | If true, shows a required indicator on the label.               |     |
+| `...props`    | `any`     | —       | Any other props are spread to the underlying `<input>` element. |
 
 #### **How It Works**
 
@@ -1369,7 +1367,7 @@ The `TextBox` component is a flexible, styled input field with label, password v
 <TextBox
   label="Password"
   val={password}
-  setVal={setPassword}
+  onChange={(e) => setPassword(e.target.value)}
   placeHolder="Enter your password"
   isRequired
   type="password"

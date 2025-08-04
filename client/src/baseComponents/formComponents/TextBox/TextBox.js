@@ -6,16 +6,7 @@ import Div from "@/baseComponents/reusableComponents/Div";
 import Label from "@/baseComponents/formComponents/Label";
 import Icon from "@/baseComponents/reusableComponents/Icon";
 
-const TextBox = ({
-  label,
-  val,
-  setVal,
-  placeHolder,
-  isRequired = false,
-  forceLightMode = false,
-  isNotEditable = false,
-  ...props
-}) => {
+const TextBox = ({ label, val, placeHolder, isRequired = false, ...props }) => {
   const [curType, setCurType] = useState("");
 
   useEffect(() => {
@@ -34,11 +25,6 @@ const TextBox = ({
           {...props}
           value={val}
           type={curType}
-          onChange={(e) => {
-            if (!isNotEditable) {
-              setVal(e.target.value);
-            }
-          }}
           placeholder={placeHolder}
           className={cx(
             "p-all-temp-3 br-rad-px-10 br-all-solid-2 m-r-temp-5 br-black width-per-100 bg-white text-theme-five"
