@@ -99,3 +99,13 @@ class ViewNameViewSet(views.APIView):
             return response.Response(status=status.HTTP_400_BAD_REQUEST, data={\"message\": f\"{str(e)}\"})
 """
 }
+
+getDjangoAdminContext() {
+echo """from django.contrib import admin
+
+class ModelNameAdmin(admin.ModelAdmin):
+    list_display = []
+    list_per_page = 10
+    search_fields = []
+"""
+}

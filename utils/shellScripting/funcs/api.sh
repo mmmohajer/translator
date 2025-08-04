@@ -114,3 +114,26 @@ createDjangoView() {
     echo -en "${DEFAULT_COLOR}"
     return 0
 }
+
+createDjangoAdminView() {
+    local appName=$(readData "To which Django app does this admin file belong?")
+    local fileName=$(readData "What is the admin file name (without .py)?")
+
+    local appFolder="api/$appName"
+    if [ ! -d "$appFolder" ]; then
+        echo -e "${I_RED}The app '$appName' does not exist in your Django apps.\nIf you want to use this app, you first need to create it using addDjangoApp.${DEFAULT_COLOR}"
+        return 1
+    fi
+
+    local adminFolder="$appFolder/admin"
+    mkdir -p "$adminFolder"
+
+    local adminFileAddr="$adminFolder/${fileName}.py"
+    getDjangoAdminContext >> "$adminFileAddr"
+
+    echo "Done!"
+    echo -en "${I_YELLOW}"
+    echo -e "Please remember to import the admin classes defined in ${fileName}.py into the __init__.py file in the admin folder of the $appName app.\nAlso, register your model with the admin site using: admin.site.register(YourModel, YourModelAdmin)."
+    echo -en "${DEFAULT_COLOR}"
+    return 0
+}

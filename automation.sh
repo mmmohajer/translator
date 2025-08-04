@@ -32,13 +32,14 @@ run() {
             [ $selected == 2 ] && createReactPage
             [ $selected == 3 ] && addDjangoApp
             [ $selected == 4 ] && createDjangoModel
-            [ $selected == 5 ] && createDjangoSerializer
-            [ $selected == 6 ] && createDjangoView
-            [ $selected == 7 ] && deployInLocal
-            [ $selected == 8 ] && deployToProdWithSwarm
-            [ $selected == 9 ] && deployToProdWithCompose
-            [ $selected == 10 ] && makeBackupOfDb
-            [ $selected == 11 ] && restoreDb
+            [ $selected == 5 ] && createDjangoAdminView
+            [ $selected == 6 ] && createDjangoSerializer
+            [ $selected == 7 ] && createDjangoView
+            [ $selected == 8 ] && deployInLocal
+            [ $selected == 9 ] && deployToProdWithSwarm
+            [ $selected == 10 ] && deployToProdWithCompose
+            [ $selected == 11 ] && makeBackupOfDb
+            [ $selected == 12 ] && restoreDb
         else
             run
         fi

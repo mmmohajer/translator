@@ -70,13 +70,14 @@ cat << EOF
 2. Create a new react page.
 3. Create a new django app.
 4. Create a new django model file.
-5. Crete a django serializer file.
-6. Create a django view file.
-7. Deploy in local server
-8. Deploy to prod server With Swarm
-9. Deploy to prod server With Compose
-10. Make a backup from the local DB
-11. Restore local DB from a file
+5. Create a new django admin file.
+6. Crete a django serializer file.
+7. Create a django view file.
+8. Deploy in local server
+9. Deploy to prod server With Swarm
+10. Deploy to prod server With Compose
+11. Make a backup from the local DB
+12. Restore local DB from a file
 $(echo -en "${I_CYAN}")0. Show MenuBar
 $(echo -en "${I_RED}")Q. Exit
 EOF
