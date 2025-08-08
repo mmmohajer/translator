@@ -6,6 +6,7 @@ import Div from "@/baseComponents/reusableComponents/Div/Div";
 import Modal from "@/baseComponents/pageParts/Modal";
 import Loading from "@/baseComponents/pageParts/Loading";
 import Alert from "@/baseComponents/pageParts/Alert";
+import AppHeader from "@/baseComponents/pageParts/AppHeader";
 import SideBarDashboard from "@/baseComponents/pageParts/SideBarDashboard";
 import FooterNavigation from "@/baseComponents/pageParts/FooterNavigation";
 import BaseAppWrapper from "@/components/wrappers/BaseAppWrapper";
@@ -58,6 +59,7 @@ const AppContainer = ({
                   direction="vertical"
                   className="flex--gr--1 height-vh-full of-y-auto"
                 >
+                  <AppHeader />
                   {children}
                 </Div>
               </Div>
@@ -68,6 +70,7 @@ const AppContainer = ({
                   direction="vertical"
                   className="flex--gr--1 of-y-auto m-b-16"
                 >
+                  <AppHeader />
                   {children}
                 </Div>
                 {hasSideBarDashboard && !isAuthPage ? <FooterNavigation /> : ""}

@@ -56,7 +56,7 @@ const Select = ({
               showOptions ? "global-rotate-180" : ""
             )}
           >
-            <Icon type="angle-up" color={COLORS["theme-two"]} />
+            <Icon type="angle-up" color={"black"} />
           </Div>
         </Div>
 
@@ -64,7 +64,7 @@ const Select = ({
           type="flex"
           direction="vertical"
           className={cx(
-            `bg-white width-per-100 global-transition-one of-y-auto scroll-type-one br-rad-px-10`,
+            `bg-white width-per-100 global-transition-one of-y-auto br-rad-px-10 global-box-shadow-type-one`,
             optionsContainerIsAbsolute ? "pos-abs pos-abs--lb" : "pos-rel"
           )}
           style={{
@@ -75,7 +75,9 @@ const Select = ({
         >
           {options?.map((item, idx) => (
             <Div
-              className={cx("p-all-temp-3 bg-theme-four-on-hover mouse-hand")}
+              className={cx(
+                "p-all-temp-3 bg-silver-on-hover text-center mouse-hand"
+              )}
               key={idx}
               onClick={() => {
                 if (optionChanged) {

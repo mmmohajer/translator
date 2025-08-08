@@ -38,7 +38,7 @@ const BaseAppWrapper = ({ isAuthPage, children }) => {
       } else {
         removeLocalStorage("access_token");
         removeLocalStorage("refresh_token");
-        if (isAuthPage) {
+        if (!isAuthPage) {
           router.push(PAGE_ROUTES.LOGIN);
         }
         setShowAuthPage(true);

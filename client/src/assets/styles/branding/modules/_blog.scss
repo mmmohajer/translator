@@ -1,0 +1,213 @@
+@use "sass:math";
+@use "../base/helpers" as *;
+
+%blogdetailheading {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.blog-detail-page-ltr {
+  h1 {
+    @extend %blogdetailheading;
+    font-size: 28px;
+  }
+
+  h2 {
+    @extend %blogdetailheading;
+    font-size: 24px;
+  }
+
+  h3 {
+    @extend %blogdetailheading;
+    font-size: 20px;
+  }
+
+  h4 {
+    @extend %blogdetailheading;
+    font-size: 18px;
+  }
+
+  h5 {
+    @extend %blogdetailheading;
+    font-size: 16px;
+  }
+
+  h6 {
+    @extend %blogdetailheading;
+    font-size: 16px;
+  }
+
+  p {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  ol {
+    list-style-type: none;
+    counter-reset: list-counter;
+    padding-left: 0;
+  }
+
+  ol li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    border-left: 2px solid #333333;
+  }
+
+  ol li::before {
+    content: counter(list-counter);
+    counter-increment: list-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: #333333;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    position: relative;
+    margin: 5px 0;
+    padding: 5px 25px;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    margin-right: 15px;
+    width: 12px;
+    height: 12px;
+    background-color: #333333;
+    border-radius: 50%;
+  }
+
+  a {
+    color: rgb(39, 184, 39) !important;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+}
+
+.blog-detail-page-rtl {
+  direction: rtl;
+
+  h1 {
+    @extend %blogdetailheading;
+    font-size: 28px;
+  }
+
+  h2 {
+    @extend %blogdetailheading;
+    font-size: 24px;
+  }
+
+  h3 {
+    @extend %blogdetailheading;
+    font-size: 20px;
+  }
+
+  h4 {
+    @extend %blogdetailheading;
+    font-size: 18px;
+  }
+
+  h5 {
+    @extend %blogdetailheading;
+    font-size: 16px;
+  }
+
+  h6 {
+    @extend %blogdetailheading;
+    font-size: 16px;
+  }
+
+  p {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  ol {
+    list-style-type: none;
+    counter-reset: list-counter;
+    padding-left: 0;
+  }
+
+  ol li {
+    position: relative;
+    padding-right: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    border-right: 2px solid #333333;
+  }
+
+  ol li::before {
+    content: counter(list-counter);
+    counter-increment: list-counter;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(50%);
+    background-color: #333333;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    position: relative;
+    margin: 5px 0;
+    padding: 5px 25px;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    margin-left: 15px;
+    width: 12px;
+    height: 12px;
+    background-color: #333333;
+    border-radius: 50%;
+  }
+
+  a {
+    color: rgb(39, 184, 39) !important;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+}

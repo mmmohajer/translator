@@ -5,7 +5,7 @@
   h#{$header} {
     width: 100%;
     font-family: "Open Sans", sans-serif;
-    // line-height: 3rem;
+    line-height: 3rem;
 
     font-size: map.get($brandingHeadingFontSizes, "h#{$header}-xs");
 

@@ -17,6 +17,9 @@ import DisplayRowColumn from "./subs/DisplayRowColumn";
 import DisplayForm from "./subs/DisplayForm";
 import DisplayTable from "./subs/DisplayTable";
 import TestSocket from "./subs/TestSocket";
+import DisplayPagination from "./subs/DisplayPagination";
+import DisplayProgressBar from "./subs/DisplayProgressBar";
+import DisplayFileProcessLoading from "./subs/DisplayFileProcessLoading";
 
 import { DESIGN_ITEMS } from "./constants";
 
@@ -83,6 +86,13 @@ const DevDesign = () => {
               {chosenItem === "form" ? <DisplayForm /> : ""}
               {chosenItem === "table" ? <DisplayTable /> : ""}
               {chosenItem === "test-socket" ? <TestSocket /> : ""}
+              {chosenItem === "pagination" ? <DisplayPagination /> : ""}
+              {chosenItem === "progress-bar" ? <DisplayProgressBar /> : ""}
+              {chosenItem === "file-process-loading" ? (
+                <DisplayFileProcessLoading />
+              ) : (
+                ""
+              )}
             </Div>
           </Div>
         )}

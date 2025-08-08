@@ -10,7 +10,8 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     "core",
-    "websocket"
+    "websocket",
+    "processor"
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS

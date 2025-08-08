@@ -19,6 +19,7 @@ const useApiCalls = ({
   useDefaultHeaders = true,
   showLoading = true,
   showErrerMessage = true,
+  isBinary = false, // new option: set true for binary responses
 }) => {
   const dispatch = useDispatch();
 
@@ -42,15 +43,22 @@ const useApiCalls = ({
       } else {
         curUrl = `${url}`;
       }
+
+      // Set responseType to 'blob' for binary, otherwise default
+      const axiosConfig = { headers: headers || {} };
+      if (isBinary) axiosConfig.responseType = "blob";
+
       if (method === "GET") {
         if (showLoading) {
           dispatch(setLoading());
         }
-        res = await axios.get(curUrl, { headers: headers || {} });
+        res = await axios.get(curUrl, axiosConfig);
         if (showLoading) {
           dispatch(setLoaded());
         }
-        if (res?.data) {
+        if (isBinary && res?.data) {
+          setData(res.data);
+        } else if (res?.data) {
           setData(res.data);
         }
         if (res?.status) {
@@ -62,13 +70,13 @@ const useApiCalls = ({
         if (showLoading) {
           dispatch(setLoading());
         }
-        res = await axios.post(curUrl, bodyData || {}, {
-          headers: headers || {},
-        });
+        res = await axios.post(curUrl, bodyData || {}, axiosConfig);
         if (showLoading) {
           dispatch(setLoaded());
         }
-        if (res?.data) {
+        if (isBinary && res?.data) {
+          setData(res.data);
+        } else if (res?.data) {
           setData(res.data);
         }
         if (res?.status) {

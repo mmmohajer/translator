@@ -1,6 +1,6 @@
 from django.contrib.auth.models import Group
 
-LIST_OF_GROUPS = ["ADMIN"]
+LIST_OF_GROUPS = ["ADMIN", "CLIENT"]
 
 def build_group_list():
     for group in LIST_OF_GROUPS:

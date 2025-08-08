@@ -1,0 +1,5 @@
+Update Dockerfile for prodution mode
+
+Create websocket_tmp folder under volume_data folder
+
+update nginx config for production for websocket_tmp folder

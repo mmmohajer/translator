@@ -1,6 +1,22 @@
 @use "sass:map";
 @use "helpers" as *;
 
+// Neutralize code and pre tags
+code,
+pre {
+  display: block !important;
+  white-space: normal !important;
+  // font-family: inherit !important;
+  // font-size: inherit !important;
+  // color: inherit !important;
+  // background: none !important;
+  // border: none !important;
+  // padding: 0 !important;
+  // margin: 0 !important;
+  // box-shadow: none !important;
+  // outline: none !important;
+}
+
 %fontclass {
   font-family: "Open Sans", sans-serif;
   line-height: 2rem;
@@ -81,5 +97,45 @@ p {
 
   &min-full-vh {
     min-height: 100vh;
+  }
+
+  &box-shadow-type- {
+    &one {
+      box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06);
+    }
+    &two {
+      box-shadow: 0px 3px 14px rgba(74, 58, 255, 0.03),
+        0px -2px 4px rgba(20, 20, 43, 0.02),
+        0px 12px 24px rgba(20, 20, 43, 0.04);
+    }
+    &three {
+      box-shadow: 0px 6px 16px rgba(74, 58, 255, 0.19);
+    }
+    &four {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    &five {
+      box-shadow: 0px 6px 16px rgba(12, 186, 255, 0.19);
+    }
+  }
+
+  &transition- {
+    &one {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  &required {
+    &::after {
+      content: "*";
+      color: red;
+      margin-left: 0.2rem;
+    }
   }
 }

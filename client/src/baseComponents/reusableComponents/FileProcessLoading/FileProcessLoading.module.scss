@@ -1,0 +1,70 @@
+@use "@/styles/branding/base/helpers" as *;
+@use "sass:map";
+
+.fullHeight {
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  backdrop-filter: blur(4px);
+}
+
+%loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &::after {
+    content: "";
+    border: solid map.get($brandingColors, "theme-one");
+    border-top-color: map.get($brandingColors, "theme-two");
+    border-radius: 50%;
+    animation: loading 1s ease infinite;
+  }
+}
+
+.loading {
+  @extend %loading;
+
+  &::after {
+    width: 50px;
+    height: 50px;
+    border-width: 10px;
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.titleContainer {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  background: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q 100 40 200 20 T 400 20 V40 H0Z" fill="rgba(103, 191, 225,0.20)"/></svg>');
+    // color: rgb(103, 191, 225);
+    background-repeat: repeat-x;
+    background-size: 400px 40px;
+    animation: titleWaveMove 2s linear infinite;
+    z-index: 1;
+  }
+}
+
+@keyframes titleWaveMove {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 400px;
+  }
+}

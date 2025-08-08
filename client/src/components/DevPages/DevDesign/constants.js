@@ -11,4 +11,7 @@ export const DESIGN_ITEMS = [
   { identifier: "form", title: "Form" },
   { identifier: "table", title: "Table" },
   { identifier: "test-socket", title: "Test Socket" },
+  { identifier: "pagination", title: "Pagination" },
+  { identifier: "progress-bar", title: "Progress Bar" },
+  { identifier: "file-process-loading", title: "File Process Loading" },
 ];
