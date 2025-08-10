@@ -1,0 +1,4 @@
+from processor.serializers import project
+
+UserProjectSerializer = project.UserProjectSerializer
+PDFProjectDetailSerializer = project.PDFProjectDetailSerializer

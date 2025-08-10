@@ -16,6 +16,7 @@ import {
   faArrowRight,
   faFilePdf,
   faFileWord,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareInstagram,
@@ -219,6 +220,15 @@ const Icon = ({
       {type === "file-word" ? (
         <FontAwesomeIcon
           icon={faFileWord}
+          style={{ color, width, height, transform: `scale(${scale})` }}
+        />
+      ) : (
+        ""
+      )}
+
+      {type === "edit" ? (
+        <FontAwesomeIcon
+          icon={faEdit}
           style={{ color, width, height, transform: `scale(${scale})` }}
         />
       ) : (

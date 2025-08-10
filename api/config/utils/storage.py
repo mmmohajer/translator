@@ -47,13 +47,13 @@ def upload_file_to_cloud(file, storage_space_name="images", file_key="nested/tes
         return False
 
 
-def get_signed_url_of_file_from_cloud(storage_space_name="images", file_key="nested/test_img.svg"):
+def get_signed_url_of_file_from_cloud(storage_space_name="images", file_key="nested/test_img.svg", expires_in=3600):
     try:
         client = connect_to_storage()
         signed_url = client.generate_presigned_url(
             'get_object',
             Params={'Bucket': storage_space_name, 'Key': file_key},
-            ExpiresIn=3600
+            ExpiresIn=expires_in
         )
         return signed_url
     except Exception as e:
@@ -61,10 +61,10 @@ def get_signed_url_of_file_from_cloud(storage_space_name="images", file_key="nes
         return ""
 
 
-def get_url_from_cloud(storage_space_name="images", file_key="nested/test_img.svg", file_type="private"):
+def get_url_from_cloud(storage_space_name="images", file_key="nested/test_img.svg", file_type="private", expires_in=3600):
     try:
         if file_type == "private":
-            return get_signed_url_of_file_from_cloud(storage_space_name, file_key)
+            return get_signed_url_of_file_from_cloud(storage_space_name, file_key, expires_in=expires_in)
         elif file_type == "public-read":
             return f"{settings.STORAGE_END_POINT_CDN_URL}/{file_key}"
         else:

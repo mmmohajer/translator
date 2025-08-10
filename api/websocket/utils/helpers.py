@@ -21,3 +21,23 @@ def get_json_text_from_url(url):
     response = requests.get(url)
     response.raise_for_status()
     return response.text
+
+def extract_pages_from_json_db(json_field):
+    # If it's a string, try to load as JSON
+    if isinstance(json_field, str):
+        try:
+            json_field = json.loads(json_field)
+        except Exception:
+            return []
+    # If it's not a list, return empty
+    if not isinstance(json_field, list):
+        return []
+    pages = []
+    for item in json_field:
+        if isinstance(item, int):
+            pages.append(item)
+        elif isinstance(item, str) and re.match(r"^\d+-\d+$", item):
+            start, end = map(int, item.split("-"))
+            if start <= end:
+                pages.extend(range(start, end + 1))
+    return pages

@@ -10,7 +10,10 @@ export const USER_AUTH_WITH_GOOGLE_API_ROUTE = "/api/user-auth-with-google/";
 export const USER_LOGIN_WITH_GOOGLE_API_ROUTE = "/api/user-login-with-google/";
 export const PROFILE_API_ROUTE = "/api/profile/";
 export const FILE_GENERATOR_API_ROUTE = "/api/file-generator/";
+export const USER_PROJECT_API_ROUTE = "/api/user-project/";
+export const PDF_PROJECT_DETAIL_API_ROUTE = "/api/pdf-project-detail/";
 
 // WEBSOCKET API ROUTES
 export const WEBSOCKET_TEST_API_ROUTE = `/wss/test-socket/`;
 export const WEBSOCKET_PDF_TRANSLATOR_API_ROUTE = `/wss/pdf-translator/`;
+export const WEBSOCKET_CHAT_BOT_API_ROUTE = `/wss/chat-bot/`;

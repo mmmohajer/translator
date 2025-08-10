@@ -19,6 +19,8 @@ const AppContainer = ({
   pageIdentifier,
   isAuthPage = false,
   hasSideBarDashboard = true,
+  hasHeader = true,
+  hasFooterNavigation = true,
   children,
 }) => {
   const dispatch = useDispatch();
@@ -59,7 +61,7 @@ const AppContainer = ({
                   direction="vertical"
                   className="flex--gr--1 height-vh-full of-y-auto"
                 >
-                  <AppHeader />
+                  {hasHeader && <AppHeader />}
                   {children}
                 </Div>
               </Div>
@@ -68,9 +70,12 @@ const AppContainer = ({
                 <Div
                   type="flex"
                   direction="vertical"
-                  className="flex--gr--1 of-y-auto m-b-16"
+                  className={cx(
+                    "flex--gr--1 of-y-auto",
+                    hasSideBarDashboard ? "m-b-16" : ""
+                  )}
                 >
-                  <AppHeader />
+                  {hasHeader && <AppHeader />}
                   {children}
                 </Div>
                 {hasSideBarDashboard && !isAuthPage ? <FooterNavigation /> : ""}

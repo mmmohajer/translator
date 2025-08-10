@@ -5,6 +5,7 @@ export const ICON_TYPES = [
   "check-mark",
   "circle-user",
   "close",
+  "edit",
   "eye",
   "eye-slash",
   "file-pdf",
